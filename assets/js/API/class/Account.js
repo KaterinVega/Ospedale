@@ -31,7 +31,7 @@ export class Account extends BaseController {
      *  @author Jose Luis Salinas <joseluissalinas2001@gmail.com>
      */
     async add() {
-        const promise = await this.sendPost("API", "add", ["account"], [JSON.stringify(this)]).then((r) => r);
+        const promise = await this.sendPost("API", "signUp", ["account"], [JSON.stringify(this)]).then((r) => r);
 
         return promise;
     }
