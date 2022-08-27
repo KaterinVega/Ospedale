@@ -1,20 +1,21 @@
 import { Account } from "./API/class/Account.js";
 
-$(document).ready(() => {
-    
-});
+$(document).ready(() => {});
 
 $("#btn_login").click(function () {
+  var documento = $("#txt_documento").val();
+  var contrasena = $("#txt_contrasena").val();
 
-    var documento = $("#txt_documento").val();
-    var contrasena = $("#txt_contrasena").val();
+  let account = new Account(
+    "katerin@gmail.com",
+    contrasena,
+    "Administrador",
+    documento
+  );
 
-    let account = new Account("katerin@gmail.com", contrasena, "Administrador", documento)
-
-    account.add().then((r) => {
-        if (r == "ok") {
-             alert("Cuenta creada") ;
-        } 
-   }) ;
-
+  account.exists().then((r) => {
+    if (r == "ok"){
+        alert("Bienvenido");
+    }
   });
+});
