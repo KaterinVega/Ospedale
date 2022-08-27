@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*submenu*/
+.dospartes{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.fonoscu{
+    background-color: rgba(182, 181, 181, 0.329); 
+    width: 25%;    
+}
+.fondosub {
+    background-image: url("../../assets/img/imagenclin.jpeg"); 
+    background-repeat: no-repeat;
+    background-size: 80vw 100vh;
+    width: 75%;
+    height: 625px;
+}
+.menuss{
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 40px;
+    padding: 20px;
+    margin-left: 90px;
+}
+.ali{
+    font-style: italic;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    float:right;
+}
+
+.ov-btn-slide-right {
+    background: rgb(241, 239, 239); 
+    color: #151516; 
+    border: 2px solid #0b6b7c; 
+    padding: 16px 20px;
+    border-radius: 3px; 
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+  }
+.ov-btn-slide-right:hover {
+    color: #fff; 
+  }
+.ov-btn-slide-right::after {
+    content: "";
+    background: #1b898d; 
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: -100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+.ov-btn-slide-right:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+.ov-btn-slide-right-salir {
+    background: #e4554a; 
+    color: #f6f6fa; 
+    border: 2px solid #f7f9fa; 
+    padding: 20px 40px;
+    border-radius: 10px; 
+    margin-top: 40px;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+}
+.ov-btn-slide-right-salir:hover {
+    color: rgb(252, 252, 252); 
+    background: rgb(180, 30, 30); 
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+.arriba{
+    height:60%;
+}
+.abajo{
+    height: 9%;
+}

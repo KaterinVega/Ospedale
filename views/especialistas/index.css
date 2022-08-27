@@ -1,0 +1,47 @@
+.hola{
+    background-color: rgb(42, 165, 165);
+    width: auto;
+    height: 30px;
+}
+.menu{
+    background-color: rgb(131, 127, 127);
+    width: 100%;
+    height: 50px;
+}
+.comple{
+    background-color: rgb(221, 219, 219);
+    margin:0 ;
+    padding: 0;
+    height: 100%;
+}
+h2, h3, menu{
+    margin: 0;
+    padding: 0;
+}
+h3{
+    margin-left: 30px;
+    padding-top: 20px;
+    font-size: 30px;
+}
+a{
+    color:rgb(32, 32, 32) ; 
+}
+.containerbtn{
+    display: flex;
+}
+.btnespe{
+    width: 80%;
+}
+.btnexcel{
+    width: 20%;
+}
+.excel{
+    background-color: #f8d40a;
+    border: none;
+   color: white;
+  padding: 8px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
