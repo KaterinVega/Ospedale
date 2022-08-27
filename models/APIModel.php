@@ -25,7 +25,7 @@
         public function joinAccount($data){
             $account = new AccountModel();
 
-            if ($account->comparePasswords($data["pass"], $data["email"])){
+            if ($account->comparePasswords($data["password"], $data["email"])){
                 echo json_encode("ok");
             } else {
                 echo json_encode("Error");

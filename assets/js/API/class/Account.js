@@ -11,14 +11,14 @@ export class Account extends BaseController {
      *  Crea un nuevo objeto de la clase Account con los datos respectivos
      * 
      *  @param {String} email - Correo electrónico de la cuenta
-     *  @param {String} pass - Contraseña de la cuenta
+     *  @param {String} passwprd - Contraseña de la cuenta
      *  @param {String} role - Role de la cuenta
      */
-    constructor(email, pass, role, documento) {
+    constructor(email, password, role, documento) {
         super();
         
         this.email = email;
-        this.pass = pass;
+        this.password = password;
         this.role = role;
         this.documento = documento;
     }

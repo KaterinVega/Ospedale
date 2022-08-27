@@ -104,7 +104,7 @@
 
         public function from($array){
             $this->email = $array["email"];
-            $this->password = $array["pass"];
+            $this->password = $array["password"];
             $this->role = $array["role"];
             $this->documento = $array["documento"];
         }
