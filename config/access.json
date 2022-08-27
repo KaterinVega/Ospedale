@@ -1,0 +1,12 @@
+{
+    "sites" : [
+        {
+            "site" : "es",
+            "access" : "public",
+            "role" : ""
+        }
+    ],
+    "default-sites" : {
+        
+    }
+}
