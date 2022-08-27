@@ -6,6 +6,6 @@
     <title>Ospedale | Acceso</title>
 </head>
 <body>
-    <!-- AQUI VA LA PAGINA -->
+    
 </body>
 </html>
