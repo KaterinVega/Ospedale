@@ -1,8 +1,3 @@
-<?php
-
-include_once "cabeza.php"
-?>
-
 <div class="fondolog">
     <div class="panta">
         <div class="izq"></div>

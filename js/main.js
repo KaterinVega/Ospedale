@@ -31,7 +31,7 @@ $(document).ready(function () {
         });
 
         setTimeout(() => {
-          window.location.replace("subinicio.php");
+          window.location.replace("./views/subinicio/index.php");
         }, 2500);
       } else {
         Swal.fire({
@@ -91,7 +91,7 @@ $(document).ready(function () {
     var objData = new FormData();
     objData.append("cargarDatos", "ok");
     $.ajax({
-      url: "control/usuariocontrol.php",
+      url: "../../control/usuariocontrol.php",
       type: "post",
       dataType: "json",
       data: objData,
@@ -225,7 +225,7 @@ $(document).ready(function () {
     var objData = new FormData();
     objData.append("cargarDatos", "ok");
     $.ajax({
-      url: "control/especialistaControl.php",
+      url: "../../control/especialistaControl.php",
       type: "post",
       dataType: "json",
       data: objData,
@@ -469,7 +469,7 @@ $(document).ready(function () {
     var objData = new FormData();
     objData.append("cargarDatos", "ok");
     $.ajax({
-      url: "control/alianzasControl.php",
+      url: "../../control/alianzasControl.php",
       type: "post",
       dataType: "json",
       data: objData,

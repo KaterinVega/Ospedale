@@ -1,19 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="./views/especialistas/index.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <title>Ospedale | Acceso</title>
-</head>
-<body>
+<?php
 
+include_once "../../modulos/cabeza.php";
+
+if (session_status() == PHP_SESSION_NONE){
+    session_start();
+}
+
+$usuario = $_SESSION["usuario"];
+
+?>
 
 <div class="hola">
 <h4 class="ali">Alianzas Estrategicas</h4>
 </div>
         <div class="menu">
         <nav class="navegacion">
-        <a class="bot"href="subinicio.php">Inicio</a>
+        <a class="bot"href="../subinicio/index.php">Inicio</a>
         </nav>
 
         
@@ -241,4 +243,6 @@
     </div>
 </div>
 
-</body>
+<script>
+    const cargo = '<?php echo $usuario["cargo"]; ?>';
+</script>

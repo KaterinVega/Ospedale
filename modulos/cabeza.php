@@ -26,8 +26,8 @@
  
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.4/datatables.min.js"></script>
 
-    <link rel="stylesheet" href="style.css">
-    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/main.js"></script>
 </head>
 <body>
    

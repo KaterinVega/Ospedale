@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="./views/subinicio/style.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <title>Ospedale | Acceso</title>
 </head>
@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="form-group botoness">
-                    <a href="alianzas.php" class="ov-btn-slide-right">TERCEROS ADMINISTRATIVOS</a>
+                    <a href="../alianzas/index.php" class="ov-btn-slide-right">TERCEROS ADMINISTRATIVOS</a>
                     </div>
                     
                     
