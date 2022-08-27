@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hind Vadodara', sans-serif;
+    
+}
+
+/*iniciar sesion*/
+body{
+    width: 100%;
+    background-color: rgb(221, 219, 219);
+}
+.fondolog {
+    background-image: url("./img/913a67d015efe38a3d0ee5e5b4172908.jpg"); 
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+.ftco-section {
+    padding: 10em 0;
+}
+section {
+    display: block;
+}
+.col-lg-5 {
+    width: 37%;
+}
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.rowi{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; 
+}
+.col-md-7 {
+    -webkit-box-flex: 1;
+    -ms-flex: 0 0 57.33333%;
+    flex: 0 0 57.33333%;
+    max-width: 57.33333%;
+}
+.wrap {
+    width: 100%;
+    overflow: hidden;
+    background: rgba(189, 187, 187, 0.705);
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 20px 44px -15px rgb(0 0 0 / 24%);
+    -moz-box-shadow: 0px 20px 44px -15px rgba(0, 0, 0, 0.24);
+    box-shadow: 0px 20px 44px -15px rgb(0 0 0 / 24%);
+}
+.p-md-5 {
+    padding: 3rem !important;
+}
+.login-wrap h3 {
+    font-weight: 700;
+}
+.form-group {
+    position: relative;
+    z-index: 0;
+    margin-bottom: 20px !important;
+}
+.form-control {
+    height: 35px;
+    background: #fff;
+    color: #000;
+    font-size: 20px;
+    border-radius: 4px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid rgba(75, 67, 67, 0.521);
+}
+.btns.btns-primary {
+    background: rgb(22, 22, 22) !important;
+    color: rgb(235, 231, 231) !important;
+    cursor: pointer;
+}
+.btns {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    font-size: 17px;
+    padding: 10px 20px;
+    width: 200px;
+    border:solid 1px rgba(223, 220, 215, 0.507);
+}
+.botonlo{
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    font-size: 15px;
+    padding: 5px 10px;
+    color: #fff;
+    width: 100px;
+    background: rgb(21, 159, 168) !important;
+}
+.panta{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.dere{
+    width: 50%;
+}
+.izq{
+    width: 50%;
+}
+.gen{
+    float:center;
+    margin-left: 150px;
+}
+
+/*submenu*/
+.dospartes{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.fonoscu{
+    background-color: rgba(182, 181, 181, 0.329); 
+    width: 25%;    
+}
+.fondosub {
+    background-image: url("./img/imagenclin.jpeg"); 
+    background-repeat: no-repeat;
+    background-size: 80vw 100vh;
+    width: 75%;
+    height: 625px;
+}
+.menuss{
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 40px;
+    padding: 20px;
+    margin-left: 90px;
+}
+.ali{
+    font-style: italic;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    float:right;
+}
+
+.ov-btn-slide-right {
+    background: rgb(241, 239, 239); /* color de fondo */
+    color: #151516; /* color de fuente */
+    border: 2px solid #0b6b7c; /* tamaño y color de borde */
+    padding: 16px 20px;
+    border-radius: 3px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+  }
+.ov-btn-slide-right:hover {
+    color: #fff; /* color de fuente hover */
+  }
+.ov-btn-slide-right::after {
+    content: "";
+    background: #1b898d; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: -100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+.ov-btn-slide-right:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+.ov-btn-slide-right-salir {
+    background: #e4554a; /* color de fondo hover */
+    color: #f6f6fa; /* color de fuente */
+    border: 2px solid #f7f9fa; /* tamaño y color de borde */
+    padding: 20px 40px;
+    border-radius: 10px; /* redondear bordes */
+    margin-top: 40px;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+}
+.ov-btn-slide-right-salir:hover {
+    color: rgb(252, 252, 252); /* color de fuente hover */
+    background: rgb(180, 30, 30); /* color de fondo */
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+.arriba{
+    height:60%;
+}
+.abajo{
+    height: 9%;
+}
+
+  
+/*menu especialistas*/
+
+
+.hola{
+    background-color: rgb(42, 165, 165);
+    width: auto;
+    height: 30px;
+}
+.menu{
+    background-color: rgb(131, 127, 127);
+    width: 100%;
+    height: 50px;
+}
+.comple{
+    background-color: rgb(221, 219, 219);
+    margin:0 ;
+    padding: 0;
+    height: 100%;
+}
+h2, h3, menu{
+    margin: 0;
+    padding: 0;
+}
+h3{
+    margin-left: 30px;
+    padding-top: 20px;
+    font-size: 30px;
+}
+a{
+    color:rgb(32, 32, 32) ; 
+}
+.containerbtn{
+    display: flex;
+}
+.btnespe{
+    width: 80%;
+}
+.btnexcel{
+    width: 20%;
+}
+.excel{
+    background-color: #f8d40a;
+    border: none;
+   color: white;
+  padding: 8px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+/*documentos*/
+.conjunto{
+    padding: 20px;
+    margin-top: 10px;
+    width: 70%;
+    margin: auto;
+    background-color: rgb(245, 241, 241);
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+
+}
+.conjunto2{
+    padding: 20px;
+    margin-top: 10px;
+    width: 70%;
+    margin: auto;
+    background-color: rgb(245, 241, 241);
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    display: flex;
+}
+.cont1{
+    width: 60%;
+}
+.cont2{
+    width: 40%;
+}
+
+.datos{
+    border: none;
+    font-size: 22px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #6c6c6d;
+    background-color: none;
+}
+.dato{
+    width: 45%;
+    font-size: 18px;
+    color: #6c6c6d;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.form-control {
+    height: 35px;
+    background: #fff;
+    color: #000;
+    font-size: 17px;
+    border-radius: 4px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid rgba(75, 67, 67, 0.521);
+}
