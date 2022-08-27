@@ -5,6 +5,7 @@
         private $email;
         private $password;
         private $role;
+        private $documento;
 
         public function __construct()
         {
@@ -13,15 +14,17 @@
             $this->email = "";
             $this->password = "";
             $this->role = "";
+            $this->documento = "";
         }
 
         public function save(){
             try {
-                $query = $this->prepare("INSERT INTO account VALUES (:email, :password, :role)");
+                $query = $this->prepare("INSERT INTO account VALUES (:email, :password, :role, :documento)");
                 $query->execute([
                     "email" => $this->email,
                     "password" => md5($this->password),
-                    "role" => $this->role
+                    "role" => $this->role,
+                    "documento" => $this->documento
                 ]);
 
                 return true;
@@ -101,8 +104,9 @@
 
         public function from($array){
             $this->email = $array["email"];
-            $this->password = $array["password"];
+            $this->password = $array["pass"];
             $this->role = $array["role"];
+            $this->documento = $array["documento"];
         }
 
         public function exists($email){
@@ -126,10 +130,6 @@
         public function updatePassword($pDNI, $pNewPassword){
             try {
                 $query = $this->prepare("UPDATE user SET passUser = :passUser WHERE dniUser = :dniUser");
-                /*$query->execute([
-                    "passUser" => $this->getHashedPassword($pNewPassword),
-                    "dniUser" => $pDNI
-                ]);*/
                 $query->execute([
                     "passUser" => md5($pNewPassword),
                     "dniUser" => $pDNI
@@ -161,10 +161,12 @@
         public function setEmail($email){  $this->email = $email; }
         public function setPassword($password){    $this->password = $password; }
         public function setRole($role){    $this->role = $role; }
+        public function setDocumento($documento) { $this->dni = $documento; }
 
         public function getEmail()      { return $this->email;      }
         public function getPassword()   { return $this->password;   }
         public function getRole()       { return $this->role;       }
+        public function getDocumento()        { return $this->documento;        }
     }
 
 ?>

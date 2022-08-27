@@ -17,7 +17,7 @@
                         <div class="col-md-7 col-lg-5">
                             <div class="wrap">
                                 <div class="cuadro p-md-5">
-                                    <div class="gen"><img src="assets/img../usuario.png" width="50px" alt=""></div>
+                                    <div class="gen"><img src="./assets/img/usuario.png" width="50px" alt=""></div>
                                     <h3 class="text-center">LOGIN</h3>
 
                                     <form>
@@ -43,6 +43,9 @@
             </section>
         </div>
     </div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="module" src="./assets/js/Session.js"></script>
 </div>
 </body>
 </html>
