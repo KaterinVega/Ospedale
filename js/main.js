@@ -91,7 +91,7 @@ $(document).ready(function () {
     var objData = new FormData();
     objData.append("cargarDatos", "ok");
     $.ajax({
-      url: "../../control/usuariocontrol.php",
+      url: "../../Ospedale/control/usuariocontrol.php",
       type: "post",
       dataType: "json",
       data: objData,
@@ -225,7 +225,7 @@ $(document).ready(function () {
     var objData = new FormData();
     objData.append("cargarDatos", "ok");
     $.ajax({
-      url: "../../control/especialistaControl.php",
+      url: "../../Ospedale/control/especialistaControl.php",
       type: "post",
       dataType: "json",
       data: objData,
@@ -469,7 +469,7 @@ $(document).ready(function () {
     var objData = new FormData();
     objData.append("cargarDatos", "ok");
     $.ajax({
-      url: "../../control/alianzasControl.php",
+      url: "../../Ospedale/control/alianzasControl.php",
       type: "post",
       dataType: "json",
       data: objData,
