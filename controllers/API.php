@@ -14,9 +14,15 @@
         }
 
         #region Account
-        public function add(){
+        public function signUp(){
             if ($this->existPost(["account"])){
-                $this->model->addAccount(json_decode($this->getPost("account"), true));
+                $this->model->newAccount(json_decode($this->getPost("account"), true));
+            }
+        }
+
+        public function signIn(){
+            if ($this->existPost(["account"])){
+                $this->model->joinAccount(json_decode($this->getPost("account"), true));
             }
         }
         #endregion
