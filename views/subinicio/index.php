@@ -50,7 +50,7 @@ $usuario = $_SESSION["usuario"];
             <div class="abajo">
                 <div class="salir">
                     <div class="bots">
-                        <a class="ov-btn-slide-right-salir" href="index.php">SALIR</a>
+                        <a class="ov-btn-slide-right-salir" href="../../index.php">SALIR</a>
                     </div>
 
                 </div>

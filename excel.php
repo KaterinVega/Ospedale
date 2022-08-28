@@ -76,8 +76,8 @@ if(isset($_POST["submitAli"]))
  <td>'.$row["nit"].'</td> 
  <td>'.$row["representante"].'</td> 
  <td>'.$row["objecto"].'</td> 
- <td>'.$row["inicioCon"].'</td> 
- <td>'.$row["finCon"].'</td> 
+ <td>'.$row["inicioConA"].'</td> 
+ <td>'.$row["finConA"].'</td> 
  <td>'.$row["prorroga"].'</td> 
  <td>'.$row["camara"].'</td> 
  <td>'.$row["correo"].'</td> 

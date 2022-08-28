@@ -1,6 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <?php include_once "modulos/cabeza.php"; ?>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./js/main.js"></script>
+</head>
+
 <?php
 
-include_once "modulos/cabeza.php";
 include_once "modelo/conexion.php";
 
 $nit = $_GET["nit"];
@@ -16,7 +24,7 @@ $usuario = $objRespuesta->fetch();
     </div>
         <div class="menu">
         <nav class="navegacion">
-        <a class="bot"href="alianzas.php">volver</a>
+        <a class="bot"href="./views/alianzas/index.php">volver</a>
         </nav>
 </div>
 <div class="conjunto2">

@@ -164,7 +164,7 @@ $(document).ready(function () {
           contentType: false,
           processData: false,
         }).done(function (respuesta) {
-          window.location = "../views/usuarios/index.php";
+          window.location = "../../views/usuarios/index.php";
         });
       }
     });
@@ -191,7 +191,7 @@ $(document).ready(function () {
     objData.append("jscorreo", correo);
     objData.append("jstelefono", telefono);
     $.ajax({
-      url: "control/especialistaControl.php",
+      url: "http://192.168.1.113/ospedale/control/especialistaControl.php",
       type: "post",
       dataType: "json",
       data: objData,
@@ -342,7 +342,7 @@ $(document).ready(function () {
     objData.append("jsEditTelefono", telefono);
 
     $.ajax({
-      url: "control/especialistaControl.php",
+      url: "http://192.168.1.113/ospedale/control/especialistaControl.php",
       type: "post",
       dataType: "json",
       data: objData,
@@ -351,7 +351,7 @@ $(document).ready(function () {
       processData: false,
     }).done(function (respuesta) {
       if (respuesta == "ok") {
-        window.location = "especialistas.php";
+        window.location = "../../views/especialistas/index.php";
         /*Swal.fire({
         position: "top-end",
         icon: "success",
@@ -400,7 +400,7 @@ $(document).ready(function () {
   $("#tablaEspe").on("click", "#btn_documentos", function () {
     var documento = $(this).attr("documento");
 
-    window.open("documentos.php?documento=" + documento, "_blank");
+    window.open("../../documentos.php?documento=" + documento, "_blank");
   });
 
   /////////////////////////////////////////////////////////////////////////////////////////
@@ -432,7 +432,7 @@ $(document).ready(function () {
     objData.append("jstelefono", telefono);
     objData.append("jssupervisor", supervisor);
     $.ajax({
-      url: "control/alianzasControl.php",
+      url: "http://192.168.1.113/ospedale/control/alianzasControl.php",
       type: "post",
       dataType: "json",
       data: objData,
@@ -602,7 +602,7 @@ $(document).ready(function () {
     objData.append("jsEditsupervisor", supervisor);
 
     $.ajax({
-      url: "control/alianzasControl.php",
+      url: "http://192.168.1.113/ospedale/control/alianzasControl.php",
       type: "post",
       dataType: "json",
       data: objData,
@@ -611,7 +611,7 @@ $(document).ready(function () {
       processData: false,
     }).done(function (respuesta) {
       if (respuesta == "ok") {
-        window.location = "alianzas.php";
+        window.location = "../../views/alianzas/index.php";
         /*Swal.fire({
         position: "top-end",
         icon: "success",
@@ -635,23 +635,7 @@ $(document).ready(function () {
       confirmButtonText: "si,Estoy seguro!",
       cancelButtonText: "cancelar",
     }).then((result) => {
-      /*if (result.isConfirmed){
-            var documento = $(this).attr("documento");
-            var objData = new FormData();
-            objData.append("idEliminarUsu", documento);
-
-            $.ajax({
-                url: "control/usuariocontrol.php",
-                type: "post",
-                dataType: "json",
-                data: objData,
-                cache: false,
-                contentType: false,
-                processData: false,
-            }).done(function(respuesta){
-                window.location = "usuarios.php";
-            })
-        }*/
+      
     });
   });
 
@@ -659,6 +643,6 @@ $(document).ready(function () {
   $("#tablaAli").on("click", "#btn_documentosAdm", function () {
     var nit = $(this).attr("nit");
 
-    window.open("documentAli.php?nit=" + nit, "_blank");
+    window.open("../../documentAli.php?nit=" + nit, "_blank");
   });
 });
