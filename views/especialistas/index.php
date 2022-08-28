@@ -15,6 +15,7 @@ $usuario = $_SESSION["usuario"];
     <?php include_once "../../modulos/cabeza.php"; ?>
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/main.js"></script>
 </head>
 
 <body>

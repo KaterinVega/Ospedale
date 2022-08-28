@@ -60,7 +60,7 @@ $(document).ready(function () {
     objData.append("jscargo", cargo);
     objData.append("jsclave", clave);
     $.ajax({
-      url: "control/usuariocontrol.php",
+      url: "http://192.168.1.113/ospedale/control/usuariocontrol.php",
       type: "post",
       dataType: "json",
       data: objData,
@@ -91,7 +91,7 @@ $(document).ready(function () {
     var objData = new FormData();
     objData.append("cargarDatos", "ok");
     $.ajax({
-      url: "../../Ospedale/control/usuariocontrol.php",
+      url: "http://192.168.1.113/ospedale/control/usuariocontrol.php",
       type: "post",
       dataType: "json",
       data: objData,
@@ -139,36 +139,36 @@ $(document).ready(function () {
   }
 
   //Eliminar Usuario
-  $(".tablaUsu").on("click","#btn_eliminarUsu", function(){
+  $(".tablaUsu").on("click", "#btn_eliminarUsu", function () {
     Swal.fire({
-        title: 'Esta usted seguro de eliminar el registro?',
-        text:"Recuerde que no podra recuperar datos una vez confirmanda esta accion",
-        icon:'warning',
-        showCancelButton: true,
-        confirmButtonColor:'#3085d6',
-        cancelButtonColor:'#d33',
-        confirmButtonText:'si,Estoy seguro!',
-        cancelButtonText: 'cancelar'
+      title: "Esta usted seguro de eliminar el registro?",
+      text: "Recuerde que no podra recuperar datos una vez confirmanda esta accion",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "si,Estoy seguro!",
+      cancelButtonText: "cancelar",
     }).then((result) => {
-        if (result.isConfirmed){
-            var documento = $(this).attr("documento");
-            var objData = new FormData();
-            objData.append("idEliminarUsu", documento);
+      if (result.isConfirmed) {
+        var documento = $(this).attr("documento");
+        var objData = new FormData();
+        objData.append("idEliminarUsu", documento);
 
-            $.ajax({
-                url: "control/usuariocontrol.php",
-                type: "post",
-                dataType: "json",
-                data: objData,
-                cache: false,
-                contentType: false,
-                processData: false,
-            }).done(function(respuesta){
-                window.location = "usuarios.php";
-            })
-        }
-    })
-  })
+        $.ajax({
+          url: "http://192.168.1.113/ospedale/control/usuariocontrol.php",
+          type: "post",
+          dataType: "json",
+          data: objData,
+          cache: false,
+          contentType: false,
+          processData: false,
+        }).done(function (respuesta) {
+          window.location = "../views/usuarios/index.php";
+        });
+      }
+    });
+  });
 
   // funcion encargada de insertar especialista
   $("#btn_guardarE").click(function () {
@@ -225,7 +225,7 @@ $(document).ready(function () {
     var objData = new FormData();
     objData.append("cargarDatos", "ok");
     $.ajax({
-      url: "../../Ospedale/control/especialistaControl.php",
+      url: "http://192.168.1.113/ospedale/control/especialistaControl.php",
       type: "post",
       dataType: "json",
       data: objData,
@@ -364,18 +364,18 @@ $(document).ready(function () {
   });
 
   //boton inactivos espe
-  $(".tablaEspe").on("click","#btn_inactivoEspe", function(){
+  $(".tablaEspe").on("click", "#btn_inactivoEspe", function () {
     Swal.fire({
-        title: 'Esta usted seguro de Inactivar el especialista?',
-        text:"Recuerde que el resgistro estara en Inactivos",
-        icon:'warning',
-        showCancelButton: true,
-        confirmButtonColor:'#3085d6',
-        cancelButtonColor:'#d33',
-        confirmButtonText:'si,Estoy seguro!',
-        cancelButtonText: 'cancelar'
+      title: "Esta usted seguro de Inactivar el especialista?",
+      text: "Recuerde que el resgistro estara en Inactivos",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "si,Estoy seguro!",
+      cancelButtonText: "cancelar",
     }).then((result) => {
-        /*if (result.isConfirmed){
+      /*if (result.isConfirmed){
             var documento = $(this).attr("documento");
             var objData = new FormData();
             objData.append("idEliminarUsu", documento);
@@ -392,8 +392,8 @@ $(document).ready(function () {
                 window.location = "usuarios.php";
             })
         }*/
-    })
-  })
+    });
+  });
   //
 
   //funcion generar documentos E
@@ -469,7 +469,7 @@ $(document).ready(function () {
     var objData = new FormData();
     objData.append("cargarDatos", "ok");
     $.ajax({
-      url: "../../Ospedale/control/alianzasControl.php",
+      url: "http://192.168.1.113/ospedale/control/alianzasControl.php",
       type: "post",
       dataType: "json",
       data: objData,
@@ -491,36 +491,35 @@ $(document).ready(function () {
         interface += '<div class="btn-group">';
 
         if (cargo == "Administrador") {
+          interface +=
+            '<button id="btn_editarAdm" type="button" title="Editar" razon_social="' +
+            item.razon_social +
+            '" nit="' +
+            item.nit +
+            '" representante="' +
+            item.representante +
+            '" objecto="' +
+            item.objecto +
+            '" inicioConA="' +
+            item.inicioCon +
+            '" finConA="' +
+            item.finCon +
+            '" prorroga="' +
+            item.prorroga +
+            '" camara="' +
+            item.camara +
+            '" correo="' +
+            item.correo +
+            '" telefono="' +
+            item.telefono +
+            '" supervisor="' +
+            item.supervisor +
+            '" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ventana-EditarAli"><span class="glyphicon glyphicon-wrench"></span></button>';
 
-        interface +=
-          '<button id="btn_editarAdm" type="button" title="Editar" razon_social="' +
-          item.razon_social +
-          '" nit="' +
-          item.nit +
-          '" representante="' +
-          item.representante +
-          '" objecto="' +
-          item.objecto +
-          '" inicioConA="' +
-          item.inicioCon +
-          '" finConA="' +
-          item.finCon +
-          '" prorroga="' +
-          item.prorroga +
-          '" camara="' +
-          item.camara +
-          '" correo="' +
-          item.correo +
-          '" telefono="' +
-          item.telefono +
-          '" supervisor="' +
-          item.supervisor +
-          '" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ventana-EditarAli"><span class="glyphicon glyphicon-wrench"></span></button>';
-
-        interface +=
-          '<button id="btn_inactivosAdm" type="button" title="Eliminar" nit="' +
-          item.nit +
-          '" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></span></button>';
+          interface +=
+            '<button id="btn_inactivosAdm" type="button" title="Eliminar" nit="' +
+            item.nit +
+            '" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></span></button>';
         }
         interface +=
           '<button id="btn_documentosAdm" type="button" title="nit" nit="' +
@@ -551,8 +550,8 @@ $(document).ready(function () {
   $("#tablaAli").on("click", "#btn_editarAdm", function () {
     var razon = $(this).attr("razon_social");
     var nit = $(this).attr("nit");
-    var representante= $(this).attr("representante");
-    var objecto= $(this).attr("objecto");
+    var representante = $(this).attr("representante");
+    var objecto = $(this).attr("objecto");
     var inicioConA = $(this).attr("inicioConA");
     var finConA = $(this).attr("finConA");
     var prorroga = $(this).attr("prorroga");
@@ -574,7 +573,6 @@ $(document).ready(function () {
     $("#txt_Editsupervisor").val(supervisor);
     $("#btn_EditarAL").attr("nit", nit);
   });
-
 
   $("#btn_EditarAL").click(function () {
     var razon = $("#txt_EditRazon").val();
@@ -626,18 +624,18 @@ $(document).ready(function () {
   });
 
   //boton inactivos alianzas
-  $(".tablaAli").on("click","#btn_inactivosAdm", function(){
+  $(".tablaAli").on("click", "#btn_inactivosAdm", function () {
     Swal.fire({
-        title: 'Esta usted seguro de Inactivar el tercero Administrativo?',
-        text:"Recuerde que el resgistro estara en Inactivos",
-        icon:'warning',
-        showCancelButton: true,
-        confirmButtonColor:'#3085d6',
-        cancelButtonColor:'#d33',
-        confirmButtonText:'si,Estoy seguro!',
-        cancelButtonText: 'cancelar'
+      title: "Esta usted seguro de Inactivar el tercero Administrativo?",
+      text: "Recuerde que el resgistro estara en Inactivos",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "si,Estoy seguro!",
+      cancelButtonText: "cancelar",
     }).then((result) => {
-        /*if (result.isConfirmed){
+      /*if (result.isConfirmed){
             var documento = $(this).attr("documento");
             var objData = new FormData();
             objData.append("idEliminarUsu", documento);
@@ -654,12 +652,11 @@ $(document).ready(function () {
                 window.location = "usuarios.php";
             })
         }*/
-    })
-  })
+    });
+  });
 
-
-   //funcion generar documentos Ali
-   $("#tablaAli").on("click", "#btn_documentosAdm", function () {
+  //funcion generar documentos Ali
+  $("#tablaAli").on("click", "#btn_documentosAdm", function () {
     var nit = $(this).attr("nit");
 
     window.open("documentAli.php?nit=" + nit, "_blank");

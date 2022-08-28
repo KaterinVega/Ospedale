@@ -15,7 +15,7 @@
     width: 25%;    
 }
 .fondosub {
-    background-image: url("../../assets/img/imagenclin.jpeg"); 
+    background-image: url("./img/imagenclin.jpeg"); 
     background-repeat: no-repeat;
     background-size: 80vw 100vh;
     width: 75%;

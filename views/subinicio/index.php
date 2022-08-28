@@ -1,3 +1,13 @@
+<?php
+
+if (session_status() == PHP_SESSION_NONE){
+    session_start();
+}
+
+$usuario = $_SESSION["usuario"];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,11 +33,18 @@
                 <div class="form-group botoness">
                     <a href="../alianzas/index.php" class="ov-btn-slide-right">TERCEROS ADMINISTRATIVOS</a>
                 </div>
-
+                <?php
+                    if ($usuario["cargo"] == "Administrador"){
+                ?>
 
                 <div class="form-group botoness">
                     <a href="../usuarios/index.php" class="ov-btn-slide-right">USUARIOS</a>
                 </div>
+                <?php
+                    
+                }
+
+                ?>
 
             </div>
             <div class="abajo">
