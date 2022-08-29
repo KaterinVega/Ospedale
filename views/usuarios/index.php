@@ -1,3 +1,13 @@
+<?php
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+$usuario = $_SESSION["usuario"];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -105,6 +115,10 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const cargo = '<?php echo $usuario["cargo"]; ?>';
+    </script>
 </body>
 
 </html>

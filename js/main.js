@@ -60,7 +60,7 @@ $(document).ready(function () {
     objData.append("jscargo", cargo);
     objData.append("jsclave", clave);
     $.ajax({
-      url: "http://192.168.1.113/ospedale/control/usuariocontrol.php",
+      url: "http://localhost/ospedale/control/usuariocontrol.php",
       type: "post",
       dataType: "json",
       data: objData,
@@ -91,7 +91,7 @@ $(document).ready(function () {
     var objData = new FormData();
     objData.append("cargarDatos", "ok");
     $.ajax({
-      url: "http://192.168.1.113/ospedale/control/usuariocontrol.php",
+      url: "http://localhost/ospedale/control/usuariocontrol.php",
       type: "post",
       dataType: "json",
       data: objData,
@@ -156,7 +156,7 @@ $(document).ready(function () {
         objData.append("idEliminarUsu", documento);
 
         $.ajax({
-          url: "http://192.168.1.113/ospedale/control/usuariocontrol.php",
+          url: "http://localhost/ospedale/control/usuariocontrol.php",
           type: "post",
           dataType: "json",
           data: objData,
@@ -191,7 +191,7 @@ $(document).ready(function () {
     objData.append("jscorreo", correo);
     objData.append("jstelefono", telefono);
     $.ajax({
-      url: "http://192.168.1.113/ospedale/control/especialistaControl.php",
+      url: "http://localhost/ospedale/control/especialistaControl.php",
       type: "post",
       dataType: "json",
       data: objData,
@@ -225,7 +225,7 @@ $(document).ready(function () {
     var objData = new FormData();
     objData.append("cargarDatos", "ok");
     $.ajax({
-      url: "http://192.168.1.113/ospedale/control/especialistaControl.php",
+      url: "http://localhost/ospedale/control/especialistaControl.php",
       type: "post",
       dataType: "json",
       data: objData,
@@ -342,7 +342,7 @@ $(document).ready(function () {
     objData.append("jsEditTelefono", telefono);
 
     $.ajax({
-      url: "http://192.168.1.113/ospedale/control/especialistaControl.php",
+      url: "http://localhost/ospedale/control/especialistaControl.php",
       type: "post",
       dataType: "json",
       data: objData,
@@ -432,7 +432,7 @@ $(document).ready(function () {
     objData.append("jstelefono", telefono);
     objData.append("jssupervisor", supervisor);
     $.ajax({
-      url: "http://192.168.1.113/ospedale/control/alianzasControl.php",
+      url: "http://localhost/ospedale/control/alianzasControl.php",
       type: "post",
       dataType: "json",
       data: objData,
@@ -469,7 +469,7 @@ $(document).ready(function () {
     var objData = new FormData();
     objData.append("cargarDatos", "ok");
     $.ajax({
-      url: "http://192.168.1.113/ospedale/control/alianzasControl.php",
+      url: "http://localhost/ospedale/control/alianzasControl.php",
       type: "post",
       dataType: "json",
       data: objData,
@@ -602,7 +602,7 @@ $(document).ready(function () {
     objData.append("jsEditsupervisor", supervisor);
 
     $.ajax({
-      url: "http://192.168.1.113/ospedale/control/alianzasControl.php",
+      url: "http://localhost/ospedale/control/alianzasControl.php",
       type: "post",
       dataType: "json",
       data: objData,
