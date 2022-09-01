@@ -24,7 +24,7 @@ $usuario = $_SESSION["usuario"];
     </div>
     <div class="menu">
         <nav class="navegacion">
-            <a class="bot" href="../subinicio/index.php">Inicio</a>
+            <a class="bot" href="../subinicio/index.php">Volver</a>
         </nav>
 
 

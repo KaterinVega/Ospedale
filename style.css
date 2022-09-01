@@ -151,7 +151,6 @@ section {
     padding: 0;
     float:right;
 }
-
 .ov-btn-slide-right {
     background: rgb(241, 239, 239); /* color de fondo */
     color: #151516; /* color de fuente */
@@ -211,11 +210,8 @@ section {
 }
 .abajo{
     height: 9%;
-}
-
-  
+} 
 /*menu especialistas*/
-
 
 .hola{
     background-color: rgb(42, 165, 165);
@@ -274,7 +270,6 @@ a{
     background-color: rgb(245, 241, 241);
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
-
 }
 .conjunto2{
     padding: 20px;
@@ -286,6 +281,7 @@ a{
     border-top-right-radius: 40px;
     display: flex;
 }
+
 .cont1{
     width: 60%;
 }
@@ -306,6 +302,56 @@ a{
     color: #6c6c6d;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+.docucontra{
+    border: none;
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #6c6c6d;
+    margin-top: 40px;
+}
+.btneli{
+    background: transparent;
+    color: #cc1800;
+    border: 2px solid #cc0000;
+    border-radius: 6px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+      color: black; 
+      border: 2px solid #ba2500;
+    text-transform: uppercase;
+}
+.btneli:hover{
+    background-color: #ba1600;
+    color: white;
+}
+.btnsubi{
+    background: transparent;
+    color: #00cc3d;
+    border: 2px solid #00cc66;
+    border-radius: 6px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+      color: black; 
+      border: 2px solid #00ba2e;
+    text-transform: uppercase;
+}
+.btnsubi:hover{
+    background-color: #00ba0f;
+    color: white;
+}
+.contenerdocu{
+    height: auto;
+}
 .form-control {
     height: 35px;
     background: #fff;
@@ -315,4 +361,11 @@ a{
     -webkit-box-shadow: none;
     box-shadow: none;
     border: 1px solid rgba(75, 67, 67, 0.521);
+}
+.bot{
+    color:#f7f9fa;
+    font-size: 15px;
+    margin-left: 14px;
+
+    
 }
