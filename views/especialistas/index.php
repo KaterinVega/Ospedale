@@ -51,7 +51,7 @@ $usuario = $_SESSION["usuario"];
                         <div class="containerbtn">
                             <div class="btnespe"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ventana-especialistas">Registrar Especialista</button></div>
                             <div class="btnexcel">
-                                <form method="post" action="excel.php">
+                                <form method="post" action="../../excel.php">
                                     <input class="excel" type="submit" name="submit" value="Exportar Excel" />
                                 </form>
                             </div>

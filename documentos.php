@@ -26,7 +26,7 @@ $usuario = $objRespuesta->fetch();
     </div>
         <div class="menu">
         <nav class="navegacion">
-        <a class="bot"href="./views/especialistas/index.php">volver</a>
+        <a class="bot"href="../views/especialistas/index.php">volver</a>
         </nav>
     </div>
 
