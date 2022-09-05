@@ -44,6 +44,7 @@ $usuario = $objRespuesta->fetch();
     </div>
     
     <div class="cont2">
+    <div class="aliicon"><img class="ali"src="img/images-removebg-preview.ico" alt="" width="60px"></div>
     FECHA INICIO CONTRATO:
     <div class="datos"><?php echo $usuario['inicioConA'] ?></div>
     <br>

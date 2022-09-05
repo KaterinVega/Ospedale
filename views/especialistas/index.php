@@ -31,9 +31,9 @@ $usuario = $_SESSION["usuario"];
 
     </div>
     <div class="comple">
+    <div class="aliicon"><img class="ali"src="../../img/images-removebg-preview.ico" alt="" width="60px"></div>
         <div class="container">
-        <img class="ali"src="../../img/images-removebg-preview.ico" alt="" width="60px">
-
+        
             <div class="row">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">

@@ -27,6 +27,7 @@ $usuario = $_SESSION["usuario"];
         </nav>
     </div>
     <div class="comple">
+    <div class="aliicon"><img class="ali"src="../../img/images-removebg-preview.ico" alt="" width="60px"></div>
         <div class="container">
 
 

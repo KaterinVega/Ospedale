@@ -151,10 +151,9 @@ section {
     padding: 0;
     float:right;
 }
-.alis{
-    margin: 0;
-    padding: 0;
-    float:right;
+.aliicon{
+    float: right;
+    
 }
 .ov-btn-slide-right {
     background: rgb(241, 239, 239); /* color de fondo */
