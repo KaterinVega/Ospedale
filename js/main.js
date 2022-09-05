@@ -2,6 +2,7 @@ $(document).ready(function () {
   cargarEspe();
   cargarUsuario();
   cargarAli();
+  cargarArchi();
 
   // funcion login
   $("#btn_login").click(function () {
@@ -99,7 +100,6 @@ $(document).ready(function () {
       contentType: false,
       processData: false,
     }).done(function (respuesta) {
-      console.log(respuesta);
       var dataSet = [];
       var contadorUsu = 0;
 
@@ -233,7 +233,6 @@ $(document).ready(function () {
       contentType: false,
       processData: false,
     }).done(function (respuesta) {
-      console.log(respuesta);
       var dataSet = [];
       var contadorEspe = 0;
 
@@ -335,8 +334,8 @@ $(document).ready(function () {
     objData.append("jsEditEspecialidad", especialidad);
     objData.append("jsEditNombres", nombres);
     objData.append("jsEditDocumento", documento);
-    objData.append("jsEditinicioCon", inicioCon);
-    objData.append("jsEditfinCon", finCon);
+    objData.append("jsEditinicio", inicioCon);
+    objData.append("jsEditfin", finCon);
     objData.append("jsEditpoliza", poliza);
     objData.append("jsEditcorreo", correo);
     objData.append("jsEditTelefono", telefono);
@@ -404,7 +403,7 @@ $(document).ready(function () {
   });
 
   //funcion archivos documentos
-  function cargarEspe() {
+  function cargarArchi() {
     var objData = new FormData();
     objData.append("cargarDatos", "ok");
     $.ajax({
@@ -519,7 +518,6 @@ $(document).ready(function () {
       contentType: false,
       processData: false,
     }).done(function (respuesta) {
-      console.log(respuesta);
       var dataSet = [];
       var contadorAli = 0;
 
@@ -635,7 +633,7 @@ $(document).ready(function () {
     objData.append("jsEditNit", nit);
     objData.append("jsEditrepresentante", representante);
     objData.append("jsEditobjecto", objecto);
-    objData.append("jsEditinicioCon", inicioConA);
+    objData.append("jsEditinicioConA", inicioConA);
     objData.append("jsEditfinCon", finConA);
     objData.append("jsEditprorroga", prorroga);
     objData.append("jsEditcamara", camara);

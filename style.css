@@ -151,6 +151,11 @@ section {
     padding: 0;
     float:right;
 }
+.alis{
+    margin: 0;
+    padding: 0;
+    float:right;
+}
 .ov-btn-slide-right {
     background: rgb(241, 239, 239); /* color de fondo */
     color: #151516; /* color de fuente */

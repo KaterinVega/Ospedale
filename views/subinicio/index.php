@@ -13,9 +13,9 @@ $usuario = $_SESSION["usuario"];
 
 <head>
     <?php include_once "../../modulos/cabeza.php"; ?>
+    <link rel="shortcut icon" href="../../img/images-removebg-preview.ico">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <title>Ospedale | Acceso</title>
 </head>
 
 <body>

@@ -54,14 +54,14 @@ if(isset($_POST["cargarDatos"]) == "ok"){
     $objListarEspecialista->ctrListarEspecialistas();
 }
 //editar especialistas
-if (isset($_POST["jsEditEspecialidad"]) && isset($_POST["jsEditNombres"]) && isset($_POST["jsEditDocumento"]) && isset($_POST["jsEditinicioCon"]) && isset($_POST["jsEditfinCon"]) && isset($_POST["jsEditpoliza"]) && isset($_POST["jsEditcorreo"]) && isset($_POST["jsEditTelefono"])) {
+if (isset($_POST["jsEditEspecialidad"]) && isset($_POST["jsEditNombres"]) && isset($_POST["jsEditDocumento"]) && isset($_POST["jsEditinicio"]) && isset($_POST["jsEditfin"]) && isset($_POST["jsEditpoliza"]) && isset($_POST["jsEditcorreo"]) && isset($_POST["jsEditTelefono"])) {
 
     $objEditarUsuario = new EspecialistaControl();
     $objEditarUsuario->especialidad = $_POST["jsEditEspecialidad"];
     $objEditarUsuario->nombres = $_POST["jsEditNombres"];
     $objEditarUsuario->documento = $_POST["jsEditDocumento"];
-    $objEditarUsuario->inicioCon = $_POST["jsEditinicioCon"];
-    $objEditarUsuario->finCon = $_POST["jsEditfinCon"];
+    $objEditarUsuario->inicioCon = $_POST["jsEditinicio"];
+    $objEditarUsuario->finCon = $_POST["jsEditfin"];
     $objEditarUsuario->poliza = $_POST["jsEditpoliza"];
     $objEditarUsuario->correo = $_POST["jsEditcorreo"];
     $objEditarUsuario->telefono = $_POST["jsEditTelefono"];

@@ -13,6 +13,7 @@ $usuario = $_SESSION["usuario"];
 
 <head>
     <?php include_once "../../modulos/cabeza.php"; ?>
+    <link rel="shortcut icon" href="../../img/images-removebg-preview.ico">
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="../../style.css">
     <script src="../../js/main.js"></script>
@@ -31,6 +32,7 @@ $usuario = $_SESSION["usuario"];
     </div>
     <div class="comple">
         <div class="container">
+        <img class="ali"src="../../img/images-removebg-preview.ico" alt="" width="60px">
 
             <div class="row">
                 <ul class="nav nav-tabs">
@@ -40,7 +42,6 @@ $usuario = $_SESSION["usuario"];
                     <li class="nav-item">
                         <a id="item_tab2" class="nav-link active" href="#inactivos" data-toggle="tab">Inactivos</a>
                     </li>
-
                 </ul>
 
                 <div class="tab-content">

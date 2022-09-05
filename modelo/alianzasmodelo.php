@@ -37,7 +37,7 @@ class AlianzaModelo{
         return $ListarAlianzas;
     }
 
-    public static function mdlEditarAli($razon,$nit,$representante,$objecto,$inicioCon,$finCon,$prorro,$camara,$correo,$telefono,$supervisor){
+    public static function mdlEditarAli($razon,$nit,$representante,$objecto,$inicioConA,$finConA,$prorro,$camara,$correo,$telefono,$supervisor){
 
         $objRespuesta = conexion::conectar()->prepare("UPDATE alianzas SET razon_social= :razon, nit=:nit, representante=:representante, objecto=:objecto, inicioConA=:iniciocon,finConA=:fincon,prorroga=:prorroga,camara=:camara,correo=:correo, telefono=:telefono, supervisor=:supervisor WHERE nit=:nit");
 
@@ -45,8 +45,8 @@ class AlianzaModelo{
         $objRespuesta->bindParam(":nit",$nit);
         $objRespuesta->bindParam(":representante",$representante);
         $objRespuesta->bindParam(":objecto",$objecto);
-        $objRespuesta->bindParam(":iniciocon",$inicioCon);
-        $objRespuesta->bindParam(":fincon",$finCon);
+        $objRespuesta->bindParam(":iniciocon",$inicioConA);
+        $objRespuesta->bindParam(":fincon",$finConA);
         $objRespuesta->bindParam(":prorroga",$prorro);
         $objRespuesta->bindParam(":camara",$camara);
         $objRespuesta->bindParam(":correo",$correo);

@@ -60,14 +60,14 @@ if(isset($_POST["cargarDatos"]) == "ok"){
     $objListarAlianzas->ctrListarAli();
 }
 
-if (isset($_POST["jsEditrazon"]) && isset($_POST["jsEditNit"]) && isset($_POST["jsEditrepresentante"]) && isset($_POST["jsEditobjecto"]) && isset($_POST["jsEditinicioCon"]) && isset($_POST["jsEditfinCon"]) && isset($_POST["jsEditprorroga"]) && isset($_POST["jsEditcamara"]) && isset($_POST["jsEditcorreo"]) && isset($_POST["jsEditTelefono"]) && isset($_POST["jsEditsupervisor"])) {
+if (isset($_POST["jsEditrazon"]) && isset($_POST["jsEditNit"]) && isset($_POST["jsEditrepresentante"]) && isset($_POST["jsEditobjecto"]) && isset($_POST["jsEditinicioConA"]) && isset($_POST["jsEditfinCon"]) && isset($_POST["jsEditprorroga"]) && isset($_POST["jsEditcamara"]) && isset($_POST["jsEditcorreo"]) && isset($_POST["jsEditTelefono"]) && isset($_POST["jsEditsupervisor"])) {
 
     $objEditarUsuario = new AlianzasControl();
     $objEditarUsuario->razon = $_POST["jsEditrazon"];
     $objEditarUsuario->nit = $_POST["jsEditNit"];
     $objEditarUsuario->representante = $_POST["jsEditrepresentante"];
     $objEditarUsuario->objecto = $_POST["jsEditobjecto"];
-    $objEditarUsuario->inicioConA = $_POST["jsEditinicioCon"];
+    $objEditarUsuario->inicioConA = $_POST["jsEditinicioConA"];
     $objEditarUsuario->finConA = $_POST["jsEditfinCon"];
     $objEditarUsuario->prorro = $_POST["jsEditprorroga"];
     $objEditarUsuario->camara = $_POST["jsEditcamara"];
