@@ -32,6 +32,12 @@ class EspecialistaControl{
 
         echo json_encode($objRespuesta);
     }
+
+    public function ctrEliminarEspecialista()
+    {
+        $objRespuesta = EspecialistaModelo::mdlEliminarEspecialista($this->documento);
+        echo json_encode($objRespuesta);
+    }
 }
 
 
@@ -66,7 +72,13 @@ if (isset($_POST["jsEditEspecialidad"]) && isset($_POST["jsEditNombres"]) && iss
     $objEditarUsuario->correo = $_POST["jsEditcorreo"];
     $objEditarUsuario->telefono = $_POST["jsEditTelefono"];
     $objEditarUsuario->ctrEditarEspecialista();
+}
 
+//eliminar Especialistas
+if (isset($_POST["idEliminarEsp"])) {
+    $objEliminarUsuario = new EspecialistaControl ();
+    $objEliminarUsuario->documento = $_POST["idEliminarEsp"];
+    $objEliminarUsuario->ctrEliminarEspecialista();
 }
 
 ?>

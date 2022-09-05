@@ -60,4 +60,17 @@ class EspecialistaModelo
         
         return $mensaje;
     }
+
+    public static function mdlEliminarEspecialista($documento){
+        $mensaje="";
+        $objRespuesta = conexion::conectar()->prepare("DELETE FROM especialistas WHERE documento = :documento");
+        $objRespuesta->bindParam(":documento",$documento);
+
+        if($objRespuesta->execute()){
+            $mensaje = "ok";
+        }else{
+            $mensaje = "Error Al Eliminar los datos";
+        }
+        return $mensaje;
+    }
 }

@@ -268,7 +268,7 @@ $(document).ready(function () {
           interface +=
             '<button id="btn_inactivoEspe" type="button" title="Eliminar" documento="' +
             item.documento +
-            '" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></span></button>';
+            '" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></span></button>';
         }
 
         interface +=
@@ -362,10 +362,10 @@ $(document).ready(function () {
     });
   });
 
-  //boton inactivos espe
+  //boton eliminar espe
   $(".tablaEspe").on("click", "#btn_inactivoEspe", function () {
     Swal.fire({
-      title: "Esta usted seguro de Inactivar el especialista?",
+      title: "Esta usted seguro que quiere Eliminar el especialista?",
       text: "Recuerde que el resgistro estara en Inactivos",
       icon: "warning",
       showCancelButton: true,
@@ -374,13 +374,13 @@ $(document).ready(function () {
       confirmButtonText: "si,Estoy seguro!",
       cancelButtonText: "cancelar",
     }).then((result) => {
-      /*if (result.isConfirmed){
+      if (result.isConfirmed){
             var documento = $(this).attr("documento");
             var objData = new FormData();
-            objData.append("idEliminarUsu", documento);
+            objData.append("idEliminarEsp", documento);
 
             $.ajax({
-                url: "control/usuariocontrol.php",
+                url: "http://localhost/ospedale/control/especialistaControl.php",
                 type: "post",
                 dataType: "json",
                 data: objData,
@@ -388,9 +388,9 @@ $(document).ready(function () {
                 contentType: false,
                 processData: false,
             }).done(function(respuesta){
-                window.location = "usuarios.php";
+                window.location = "../../views/especialistas/index.php";
             })
-        }*/
+        }
     });
   });
   //
@@ -666,7 +666,7 @@ $(document).ready(function () {
   //boton inactivos alianzas
   $(".tablaAli").on("click", "#btn_inactivosAdm", function () {
     Swal.fire({
-      title: "Esta usted seguro de Inactivar el tercero Administrativo?",
+      title: "Esta usted seguro de Eliminar el tercero Administrativo?",
       text: "Recuerde que el resgistro estara en Inactivos",
       icon: "warning",
       showCancelButton: true,
