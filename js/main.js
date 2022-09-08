@@ -288,6 +288,7 @@ $(document).ready(function () {
           interface,
         ]);
       }
+      console.log(dataSet);
 
       var tabla = $(".tablaEspe").DataTable({
         data: dataSet,
@@ -374,23 +375,23 @@ $(document).ready(function () {
       confirmButtonText: "si,Estoy seguro!",
       cancelButtonText: "cancelar",
     }).then((result) => {
-      if (result.isConfirmed){
-            var documento = $(this).attr("documento");
-            var objData = new FormData();
-            objData.append("idEliminarEsp", documento);
+      if (result.isConfirmed) {
+        var documento = $(this).attr("documento");
+        var objData = new FormData();
+        objData.append("idEliminarEsp", documento);
 
-            $.ajax({
-                url: "http://localhost/ospedale/control/especialistaControl.php",
-                type: "post",
-                dataType: "json",
-                data: objData,
-                cache: false,
-                contentType: false,
-                processData: false,
-            }).done(function(respuesta){
-                window.location = "../../views/especialistas/index.php";
-            })
-        }
+        $.ajax({
+          url: "http://localhost/ospedale/control/especialistaControl.php",
+          type: "post",
+          dataType: "json",
+          data: objData,
+          cache: false,
+          contentType: false,
+          processData: false,
+        }).done(function (respuesta) {
+          window.location = "../../views/especialistas/index.php";
+        })
+      }
     });
   });
   //
@@ -402,10 +403,37 @@ $(document).ready(function () {
     window.open("../../documentos.php?documento=" + documento, "_blank");
   });
 
+  $("#btn-subirArchivos").click(function () {
+    var file = $("#fileUser").prop("files")[0];
+    var dni = $(this).attr("data-dni");
+
+    var objData = new FormData();
+
+    objData.append("subirArchivo", "ok");
+    objData.append("fileUser", file);
+    objData.append("dni", dni);
+
+    $.ajax({
+      url: "http://localhost/ospedale/control/especialistaControl.php",
+      type: "post",
+      dataType: "json",
+      data: objData,
+      cache: false,
+      contentType: false,
+      processData: false
+    }).done(function (r) {
+      if (r == "ok") {
+        window.location.reload();
+      }
+    });
+  });
+
   //funcion archivos documentos
   function cargarArchi() {
+
     var objData = new FormData();
-    objData.append("cargarDatos", "ok");
+    objData.append("cargarDocumentos", "ok");
+    objData.append("dni", dni);
     $.ajax({
       url: "http://localhost/ospedale/control/especialistaControl.php",
       type: "post",
@@ -415,7 +443,6 @@ $(document).ready(function () {
       contentType: false,
       processData: false,
     }).done(function (respuesta) {
-      console.log(respuesta);
       var dataSet = [];
       var contadorEspe = 0;
 
@@ -424,20 +451,12 @@ $(document).ready(function () {
       function cargartabladocu(item, index) {
         contadorEspe += 1;
 
-        var interface = "";
-
-        interface += '<div class="btn-group">';
-
-        if (cargo == "Administrador") {
-          
-          interface +=
-            '<button id="btn_eliminardocu" type="button" title="Eliminar" documento="' +
-            item.documento +
-            '" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></span></button>';
-        }
-
+        dataSet.push([
+          contadorEspe,
+          item
+        ]);
       }
-      
+
       var tabla = $(".tabladocu").DataTable({
         data: dataSet,
         responsive: true,
@@ -675,7 +694,7 @@ $(document).ready(function () {
       confirmButtonText: "si,Estoy seguro!",
       cancelButtonText: "cancelar",
     }).then((result) => {
-      
+
     });
   });
 
