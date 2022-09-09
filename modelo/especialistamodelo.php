@@ -1,6 +1,7 @@
 <?php
 
 include_once "conexion.php";
+include_once "../libs/Folder.php";
 
 class EspecialistaModelo
 {
@@ -21,6 +22,9 @@ class EspecialistaModelo
         $mensaje = "";
         if ($objRespuesta->execute()) {
             $mensaje = "ok";
+
+            $folder = new Folder();
+            $folder->create($documento);
         } else {
             $mensaje = "error al registrar datos";
         }
@@ -72,5 +76,28 @@ class EspecialistaModelo
             $mensaje = "Error Al Eliminar los datos";
         }
         return $mensaje;
+    }
+
+    public static function mdlListFiles($dni){
+        $handler = new Folder();
+        $files = $handler->files($dni);
+        $response = [];
+
+        foreach ($files as $file) {
+            array_push($response, $file);
+        }
+
+        return $response;
+    }
+
+    public static function mdlUploadFile($dni, $filename, $file){
+        $handler = new Folder();
+        $route = $handler->create($dni);
+        
+        if (move_uploaded_file($file, $route . "/" . $filename)){
+            return "ok";
+        } else {
+            return "error";
+        }
     }
 }

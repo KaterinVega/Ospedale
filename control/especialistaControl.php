@@ -38,6 +38,16 @@ class EspecialistaControl{
         $objRespuesta = EspecialistaModelo::mdlEliminarEspecialista($this->documento);
         echo json_encode($objRespuesta);
     }
+
+    public function ctrListFiles($dni){
+        $objRespuesta = EspecialistaModelo::mdlListFiles($dni);
+        echo json_encode($objRespuesta);
+    }
+
+    public function ctrUploadFile($dni, $name, $file){
+        $objRespuesta = EspecialistaModelo::mdlUploadFile($dni, $name, $file);
+        echo json_encode($objRespuesta);
+    }
 }
 
 
@@ -79,6 +89,21 @@ if (isset($_POST["idEliminarEsp"])) {
     $objEliminarUsuario = new EspecialistaControl ();
     $objEliminarUsuario->documento = $_POST["idEliminarEsp"];
     $objEliminarUsuario->ctrEliminarEspecialista();
+}
+
+// Subir documentos
+if (isset($_POST["subirArchivo"]) == "ok"){
+    $dni = $_POST["dni"];
+    $filename = $_FILES["fileUser"]["name"];
+    $obj = new EspecialistaControl();
+    $obj->ctrUploadFile($dni, $filename, $_FILES["fileUser"]["tmp_name"]);
+}
+
+// Cargar documentos
+if (isset($_POST["cargarDocumentos"]) == "ok"){
+    $dni = $_POST["dni"];
+    $obj = new EspecialistaControl();
+    $obj->ctrListFiles($dni);
 }
 
 ?>
