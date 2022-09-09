@@ -454,9 +454,24 @@ $(document).ready(function () {
         function cargartabladocu(item, index) {
           contadorEspe += 1;
 
+          var interface = "";
+
+        interface += '<div class="btn-group">';
+
+        /*interface += '<button id="btn_editarEspe" type="button" title="Editar" documento="' + item.documento + '" nombre="' + item.nombre + '" documento="' + item.documento + '"  poliza="' + item.vigencia_poliza + '" correo="' + item.correo + '" telefono="' + item.telefono + '" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ventana-EditarUsuarios"><span class="glyphicon glyphicon-wrench"></span></button>';*/
+
+         interface +=
+          '<button id="btn_eliminardocu" type="button" title="Eliminar" documento="' +
+          item.documento +
+          '" type="button"><span class="glyphicon glyphicon-trash"></span></span></button>';
+
+         interface += "</div>";
+          
+
           dataSet.push([
             contadorEspe,
-            item
+            item,
+            interface
           ]);
         }
 
@@ -468,6 +483,38 @@ $(document).ready(function () {
     }
 
   }
+
+  //funcion eliminar documentos
+  $(".tabladocu").on("click", "#btn_eliminardocu", function () {
+    Swal.fire({
+      title: "Esta usted seguro que quiere Eliminar el documento?",
+      text: "Recuerde que no se podra recuperar",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "si,Estoy seguro!",
+      cancelButtonText: "cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        var dni = $(this).attr("data-dni");
+        var objData = new FormData();
+        objData.append("idEliminardocu", dni);
+
+        $.ajax({
+          url: "http://localhost/ospedale/control/especialistaControl.php",
+          type: "post",
+          dataType: "json",
+          data: objData,
+          cache: false,
+          contentType: false,
+          processData: false,
+        }).done(function (respuesta) {
+          window.location = "../../views/especialistas/index.php";
+        })
+      }
+    });
+  });
   /////////////////////////////////////////////////////////////////////////////////////////
 
   // funcion encargada de insertar Alianzas

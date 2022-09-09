@@ -51,12 +51,13 @@ $usuario = $objRespuesta->fetch();
     <div>
       <h4 class="docucontra">DOCUMENTOS CONTRATUALES</h4>
       <br>
-      <div>Lista de Documentos:</div>
+      <br>
       <table class="table tabladocu" id="tabladocu">
         <thead>
           <tr>
             <th>#</th>
-            <th>Nombre</th>
+            <th>Lista de Documentos:</th>
+            <th></th>
           </tr>
         </thead>
         <tr>
