@@ -245,30 +245,32 @@ $(document).ready(function () {
 
         interface += '<div class="btn-group">';
 
-        if (cargo == "Administrador") {
-          interface +=
-            '<button id="btn_editarEspe" type="button" title="Editar" especialidad="' +
-            item.especialidad +
-            '" nombres="' +
-            item.nombres +
-            '" documento="' +
-            item.documento +
-            '" inicioCon="' +
-            item.fecha_inicio +
-            '" finCon="' +
-            item.fecha_fin +
-            '" poliza="' +
-            item.vigencia_poliza +
-            '" correo="' +
-            item.correo +
-            '" telefono="' +
-            item.telefono +
-            '" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ventana-EditarUsuarios"><span class="glyphicon glyphicon-wrench"></span></button>';
+        if (cargo != null) {
+          if (cargo == "Administrador") {
+            interface +=
+              '<button id="btn_editarEspe" type="button" title="Editar" especialidad="' +
+              item.especialidad +
+              '" nombres="' +
+              item.nombres +
+              '" documento="' +
+              item.documento +
+              '" inicioCon="' +
+              item.fecha_inicio +
+              '" finCon="' +
+              item.fecha_fin +
+              '" poliza="' +
+              item.vigencia_poliza +
+              '" correo="' +
+              item.correo +
+              '" telefono="' +
+              item.telefono +
+              '" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ventana-EditarUsuarios"><span class="glyphicon glyphicon-wrench"></span></button>';
 
-          interface +=
-            '<button id="btn_inactivoEspe" type="button" title="Eliminar" documento="' +
-            item.documento +
-            '" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></span></button>';
+            interface +=
+              '<button id="btn_inactivoEspe" type="button" title="Eliminar" documento="' +
+              item.documento +
+              '" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></span></button>';
+          }
         }
 
         interface +=
@@ -431,37 +433,40 @@ $(document).ready(function () {
   //funcion archivos documentos
   function cargarArchi() {
 
-    var objData = new FormData();
-    objData.append("cargarDocumentos", "ok");
-    objData.append("dni", dni);
-    $.ajax({
-      url: "http://localhost/ospedale/control/especialistaControl.php",
-      type: "post",
-      dataType: "json",
-      data: objData,
-      cache: false,
-      contentType: false,
-      processData: false,
-    }).done(function (respuesta) {
-      var dataSet = [];
-      var contadorEspe = 0;
+    if (dni != null) {
+      var objData = new FormData();
+      objData.append("cargarDocumentos", "ok");
+      objData.append("dni", dni);
+      $.ajax({
+        url: "http://localhost/ospedale/control/especialistaControl.php",
+        type: "post",
+        dataType: "json",
+        data: objData,
+        cache: false,
+        contentType: false,
+        processData: false,
+      }).done(function (respuesta) {
+        var dataSet = [];
+        var contadorEspe = 0;
 
-      respuesta.forEach(cargartabladocu);
+        respuesta.forEach(cargartabladocu);
 
-      function cargartabladocu(item, index) {
-        contadorEspe += 1;
+        function cargartabladocu(item, index) {
+          contadorEspe += 1;
 
-        dataSet.push([
-          contadorEspe,
-          item
-        ]);
-      }
+          dataSet.push([
+            contadorEspe,
+            item
+          ]);
+        }
 
-      var tabla = $(".tabladocu").DataTable({
-        data: dataSet,
-        responsive: true,
+        var tabla = $(".tabladocu").DataTable({
+          data: dataSet,
+          responsive: true,
+        });
       });
-    });
+    }
+
   }
   /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -549,37 +554,40 @@ $(document).ready(function () {
 
         interface += '<div class="btn-group">';
 
-        if (cargo == "Administrador") {
-          interface +=
-            '<button id="btn_editarAdm" type="button" title="Editar" razon_social="' +
-            item.razon_social +
-            '" nit="' +
-            item.nit +
-            '" representante="' +
-            item.representante +
-            '" objecto="' +
-            item.objecto +
-            '" inicioConA="' +
-            item.inicioCon +
-            '" finConA="' +
-            item.finCon +
-            '" prorroga="' +
-            item.prorroga +
-            '" camara="' +
-            item.camara +
-            '" correo="' +
-            item.correo +
-            '" telefono="' +
-            item.telefono +
-            '" supervisor="' +
-            item.supervisor +
-            '" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ventana-EditarAli"><span class="glyphicon glyphicon-wrench"></span></button>';
+        if (cargo != null) {
+          if (cargo == "Administrador") {
+            interface +=
+              '<button id="btn_editarAdm" type="button" title="Editar" razon_social="' +
+              item.razon_social +
+              '" nit="' +
+              item.nit +
+              '" representante="' +
+              item.representante +
+              '" objecto="' +
+              item.objecto +
+              '" inicioConA="' +
+              item.inicioCon +
+              '" finConA="' +
+              item.finCon +
+              '" prorroga="' +
+              item.prorroga +
+              '" camara="' +
+              item.camara +
+              '" correo="' +
+              item.correo +
+              '" telefono="' +
+              item.telefono +
+              '" supervisor="' +
+              item.supervisor +
+              '" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ventana-EditarAli"><span class="glyphicon glyphicon-wrench"></span></button>';
 
-          interface +=
-            '<button id="btn_inactivosAdm" type="button" title="Eliminar" nit="' +
-            item.nit +
-            '" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></span></button>';
+            interface +=
+              '<button id="btn_inactivosAdm" type="button" title="Eliminar" nit="' +
+              item.nit +
+              '" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></span></button>';
+          }
         }
+
         interface +=
           '<button id="btn_documentosAdm" type="button" title="nit" nit="' +
           item.nit +
@@ -694,23 +702,23 @@ $(document).ready(function () {
       confirmButtonText: "si,Estoy seguro!",
       cancelButtonText: "cancelar",
     }).then((result) => {
-      if (result.isConfirmed){
+      if (result.isConfirmed) {
         var nit = $(this).attr("nit");
         var objData = new FormData();
         objData.append("idEliminarAli", nit);
 
         $.ajax({
-            url: "http://localhost/ospedale/control/alianzasControl.php",
-            type: "post",
-            dataType: "json",
-            data: objData,
-            cache: false,
-            contentType: false,
-            processData: false,
-        }).done(function(respuesta){
-            window.location = "../../views/alianzas/index.php";
+          url: "http://localhost/ospedale/control/alianzasControl.php",
+          type: "post",
+          dataType: "json",
+          data: objData,
+          cache: false,
+          contentType: false,
+          processData: false,
+        }).done(function (respuesta) {
+          window.location = "../../views/alianzas/index.php";
         })
-    }
+      }
 
 
 

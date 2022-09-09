@@ -13,4 +13,8 @@
 
 </body>
 
+<script>
+    const cargo = null;
+    const dni = null;
+</script>
 </html>
