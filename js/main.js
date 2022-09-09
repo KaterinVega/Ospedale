@@ -559,7 +559,7 @@ $(document).ready(function () {
           interface +=
             '<button id="btn_inactivosAdm" type="button" title="Eliminar" nit="' +
             item.nit +
-            '" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></span></button>';
+            '" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></span></button>';
         }
         interface +=
           '<button id="btn_documentosAdm" type="button" title="nit" nit="' +
@@ -675,7 +675,23 @@ $(document).ready(function () {
       confirmButtonText: "si,Estoy seguro!",
       cancelButtonText: "cancelar",
     }).then((result) => {
-      
+      if (result.isConfirmed){
+        var nit = $(this).attr("nit");
+        var objData = new FormData();
+        objData.append("idEliminarAli", nit);
+
+        $.ajax({
+            url: "http://localhost/ospedale/control/alianzasControl.php",
+            type: "post",
+            dataType: "json",
+            data: objData,
+            cache: false,
+            contentType: false,
+            processData: false,
+        }).done(function(respuesta){
+            window.location = "../../views/alianzas/index.php";
+        })
+    }
     });
   });
 
