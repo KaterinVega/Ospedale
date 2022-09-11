@@ -613,6 +613,8 @@ $(document).ready(function () {
 
         if (cargo != null) {
           if (cargo == "Administrador") {
+
+            
             interface +=
               '<button id="btn_editarAdm" type="button" title="Editar" razon_social="' +
               item.razon_social +
@@ -653,12 +655,14 @@ $(document).ready(function () {
         interface += "</div>";
 
         dataSet.push([
+          
           contadorAli,
           item.razon_social,
           item.nit,
           item.inicioConA,
           item.finConA,
           item.supervisor,
+          item.estadoA,
           interface,
         ]);
       }
@@ -747,11 +751,11 @@ $(document).ready(function () {
     });
   });
 
-  //boton inactivos alianzas
+  //boton eliminar alianzas
   $(".tablaAli").on("click", "#btn_inactivosAdm", function () {
     Swal.fire({
       title: "Esta usted seguro de Eliminar el tercero Administrativo?",
-      text: "Recuerde que el resgistro estara en Inactivos",
+      text: "Recuerde que No podra recuperar el resgistro",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",

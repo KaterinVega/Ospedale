@@ -154,6 +154,7 @@ $usuario = $_SESSION["usuario"];
                                                 <th>Inicio Contrato</th>
                                                 <th>Fin Contrato</th>
                                                 <th>Supervisor Contrato</th>
+                                                <th>Estado</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
@@ -287,6 +288,7 @@ $usuario = $_SESSION["usuario"];
 
     <script>
         const cargo = '<?php echo $usuario["cargo"]; ?>';
+        const dni = null;
     </script>
 </body>
 

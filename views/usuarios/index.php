@@ -119,6 +119,7 @@ $usuario = $_SESSION["usuario"];
 
     <script>
         const cargo = '<?php echo $usuario["cargo"]; ?>';
+        const dni = null;
     </script>
 </body>
 
