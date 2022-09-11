@@ -13,11 +13,12 @@ class EspecialistaControl{
     public $poliza;
     public $correo;
     public $telefono;
+    public $estado;
     
 
     public function ctrRegistrarEspecialista()
     {
-        $objRespuesta = EspecialistaModelo::mdlRegistrarEspecialista($this->especialidad,$this->nombres, $this->documento, $this->inicioCon,$this->finCon,$this->poliza,$this->correo, $this->telefono);
+        $objRespuesta = EspecialistaModelo::mdlRegistrarEspecialista($this->especialidad,$this->nombres, $this->documento, $this->inicioCon,$this->finCon,$this->poliza,$this->correo, $this->telefono, $this->estado);
         echo json_encode($objRespuesta);
     }
 
@@ -28,7 +29,7 @@ class EspecialistaControl{
 
     public function ctrEditarEspecialista()
     {
-        $objRespuesta = EspecialistaModelo::mdlEditarEspecialista($this->especialidad, $this->nombres,$this->documento,$this->inicioCon,$this->finCon,$this->poliza,$this->correo,$this->telefono);
+        $objRespuesta = EspecialistaModelo::mdlEditarEspecialista($this->especialidad, $this->nombres,$this->documento,$this->inicioCon,$this->finCon,$this->poliza,$this->correo,$this->telefono,$this->estado);
 
         echo json_encode($objRespuesta);
     }
@@ -52,7 +53,7 @@ class EspecialistaControl{
 
 
 //insertar especialistas
-if (isset($_POST["jsespecialidad"]) && isset($_POST["jsnombres"]) && isset($_POST["jsdocumento"]) && isset($_POST["jsinicioCon"]) && isset($_POST["jsfinCon"]) && isset($_POST["jspoliza"]) &&  isset($_POST["jscorreo"]) && isset($_POST["jstelefono"])) {
+if (isset($_POST["jsespecialidad"]) && isset($_POST["jsnombres"]) && isset($_POST["jsdocumento"]) && isset($_POST["jsinicioCon"]) && isset($_POST["jsfinCon"]) && isset($_POST["jspoliza"]) &&  isset($_POST["jscorreo"]) && isset($_POST["jstelefono"]) && isset($_POST["jsestado"])) {
     $objUsuario = new EspecialistaControl();
     $objUsuario->especialidad = $_POST["jsespecialidad"];
     $objUsuario->nombres = $_POST["jsnombres"];
@@ -62,6 +63,7 @@ if (isset($_POST["jsespecialidad"]) && isset($_POST["jsnombres"]) && isset($_POS
     $objUsuario->poliza = $_POST["jspoliza"];
     $objUsuario->correo = $_POST["jscorreo"];
     $objUsuario->telefono = $_POST["jstelefono"];
+    $objUsuario->estado = $_POST["jsestado"];
     $objUsuario->ctrRegistrarEspecialista();
 }
 // visualizar especialistas
@@ -70,7 +72,7 @@ if(isset($_POST["cargarDatos"]) == "ok"){
     $objListarEspecialista->ctrListarEspecialistas();
 }
 //editar especialistas
-if (isset($_POST["jsEditEspecialidad"]) && isset($_POST["jsEditNombres"]) && isset($_POST["jsEditDocumento"]) && isset($_POST["jsEditinicio"]) && isset($_POST["jsEditfin"]) && isset($_POST["jsEditpoliza"]) && isset($_POST["jsEditcorreo"]) && isset($_POST["jsEditTelefono"])) {
+if (isset($_POST["jsEditEspecialidad"]) && isset($_POST["jsEditNombres"]) && isset($_POST["jsEditDocumento"]) && isset($_POST["jsEditinicio"]) && isset($_POST["jsEditfin"]) && isset($_POST["jsEditpoliza"]) && isset($_POST["jsEditcorreo"]) && isset($_POST["jsEditTelefono"]) && isset($_POST["jsEditestado"])) {
 
     $objEditarUsuario = new EspecialistaControl();
     $objEditarUsuario->especialidad = $_POST["jsEditEspecialidad"];
@@ -81,6 +83,7 @@ if (isset($_POST["jsEditEspecialidad"]) && isset($_POST["jsEditNombres"]) && iss
     $objEditarUsuario->poliza = $_POST["jsEditpoliza"];
     $objEditarUsuario->correo = $_POST["jsEditcorreo"];
     $objEditarUsuario->telefono = $_POST["jsEditTelefono"];
+    $objEditarUsuario->estado = $_POST["jsEditestado"];
     $objEditarUsuario->ctrEditarEspecialista();
 }
 

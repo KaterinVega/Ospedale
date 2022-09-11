@@ -110,6 +110,13 @@ $usuario = $_SESSION["usuario"];
                                                 <label for="txt_telefono">Telefono:</label>
                                                 <input type="number" class="form-control" id="txt_telefono">
                                             </div>
+                                            <div class="form-group">
+                                                <label for="txt_estado">Estado:</label>
+                                                <select id="txt_estado" class="form-control">
+                                                    <option class="opciones" value="Activo">Activo</option>
+                                                    <option class="opciones" value="inactivo">Inactivo</option>
+                                                </select>
+                                            </div>
 
                                             <button id="btn_guardarE" type="button" class="btn btn-primary"> Aceptar</button>
                                         </form>
@@ -138,6 +145,7 @@ $usuario = $_SESSION["usuario"];
                                                 <th>documento</th>
                                                 <th>Email</th>
                                                 <th>telefono</th>
+                                                <th>Estado</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
@@ -165,9 +173,9 @@ $usuario = $_SESSION["usuario"];
                                                 <th>Especialidad</th>
                                                 <th>Nombres</th>
                                                 <th>documento</th>
-                                                <th>Poliza</th>
-                                                <th>telefono</th>
                                                 <th>Email</th>
+                                                <th>telefono</th>
+                                                <th>Estado</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
@@ -237,6 +245,13 @@ $usuario = $_SESSION["usuario"];
                             <div class="form-group">
                                 <label for="txt_Edittelefono">Telefono:</label>
                                 <input type="number" class="form-control" id="txt_Edittelefono">
+                            </div>
+                            <div class="form-group">
+                                <label for="txt_Editestado">Estado:</label>
+                                    <select id="txt_Editestado" class="form-control">
+                                    <option class="opciones" value="Activo">Activo</option>
+                                    <option class="opciones" value="Inactivo">Inactivo</option>
+                                    </select>
                             </div>
 
 

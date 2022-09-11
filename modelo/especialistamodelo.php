@@ -6,9 +6,9 @@ include_once "../libs/Folder.php";
 class EspecialistaModelo
 {
 
-    public static function mdlRegistrarEspecialista($especialidad, $nombres, $documento, $inicioCon, $finCon, $poliza, $correo, $telefono)
+    public static function mdlRegistrarEspecialista($especialidad, $nombres, $documento, $inicioCon, $finCon, $poliza, $correo, $telefono, $estado)
     {
-        $objRespuesta = conexion::conectar()->prepare("INSERT INTO especialistas values(:especialidad,:nombres,:documento,:fecha_inicio,:fecha_fin,:vigencia_poliza,:correo,:telefono)");
+        $objRespuesta = conexion::conectar()->prepare("INSERT INTO especialistas values(:especialidad,:nombres,:documento,:fecha_inicio,:fecha_fin,:vigencia_poliza,:correo,:telefono,:estado)");
         $objRespuesta->bindParam(":especialidad", $especialidad);
         $objRespuesta->bindParam(":nombres", $nombres);
         $objRespuesta->bindParam(":documento", $documento);
@@ -17,6 +17,7 @@ class EspecialistaModelo
         $objRespuesta->bindParam(":vigencia_poliza", $poliza);
         $objRespuesta->bindParam(":correo", $correo);
         $objRespuesta->bindParam(":telefono", $telefono);
+        $objRespuesta->bindParam(":estado", $estado);
         
 
         $mensaje = "";
@@ -41,9 +42,9 @@ class EspecialistaModelo
         return $ListarEspecialista;
     }
 
-    public static function mdlEditarEspecialista($especialidad,$nombres,$documento,$inicioCon,$finCon,$poliza,$correo,$telefono){
+    public static function mdlEditarEspecialista($especialidad,$nombres,$documento,$inicioCon,$finCon,$poliza,$correo,$telefono,$estado){
 
-        $objRespuesta = conexion::conectar()->prepare("UPDATE especialistas SET especialidad= :especialidad, nombres=:nombres, documento=:documento, fecha_inicio=:iniciocon,fecha_fin=:fincon,vigencia_poliza=:poliza,correo=:correo, telefono=:telefono WHERE documento=:documento");
+        $objRespuesta = conexion::conectar()->prepare("UPDATE especialistas SET especialidad= :especialidad, nombres=:nombres, documento=:documento, fecha_inicio=:iniciocon,fecha_fin=:fincon,vigencia_poliza=:poliza,correo=:correo, telefono=:telefono, estado=:estado WHERE documento=:documento");
 
         $objRespuesta->bindParam(":especialidad",$especialidad);
         $objRespuesta->bindParam(":nombres",$nombres);
@@ -53,6 +54,7 @@ class EspecialistaModelo
         $objRespuesta->bindParam(":poliza",$poliza);
         $objRespuesta->bindParam(":correo",$correo);
         $objRespuesta->bindParam(":telefono",$telefono);
+        $objRespuesta->bindParam(":estado",$estado);
 
         $mensaje = "";
         if ($objRespuesta->execute()){

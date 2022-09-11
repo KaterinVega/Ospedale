@@ -180,6 +180,7 @@ $(document).ready(function () {
     var poliza = $("#txt_poliza").val();
     var correo = $("#txt_correo").val();
     var telefono = $("#txt_telefono").val();
+    var estado = $("#txt_estado").val();
 
     var objData = new FormData();
     objData.append("jsespecialidad", especialidad);
@@ -190,6 +191,7 @@ $(document).ready(function () {
     objData.append("jspoliza", poliza);
     objData.append("jscorreo", correo);
     objData.append("jstelefono", telefono);
+    objData.append("jsestado", estado);
     $.ajax({
       url: "http://localhost/ospedale/control/especialistaControl.php",
       type: "post",
@@ -208,6 +210,7 @@ $(document).ready(function () {
         $("#txt_poliza").val("");
         $("#txt_correo").val("");
         $("#txt_telefono").val("");
+        $("#txt_estado").val("");
         $("#ventana-especialistas").modal("toggle");
         Swal.fire({
           position: "top-end",
@@ -254,16 +257,18 @@ $(document).ready(function () {
               item.nombres +
               '" documento="' +
               item.documento +
-              '" inicioCon="' +
-              item.fecha_inicio +
-              '" finCon="' +
-              item.fecha_fin +
-              '" poliza="' +
-              item.vigencia_poliza +
+              '" fecha_inicio="' +
+              item.inicioCon +
+              '" fecha_fin="' +
+              item.finCon +
+              '" vigencia_poliza="' +
+              item.poliza +
               '" correo="' +
               item.correo +
               '" telefono="' +
               item.telefono +
+              '" estado="' +
+              item.estado +
               '" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ventana-EditarUsuarios"><span class="glyphicon glyphicon-wrench"></span></button>';
 
             interface +=
@@ -287,6 +292,7 @@ $(document).ready(function () {
           item.documento,
           item.correo,
           item.telefono,
+          item.estado,
           interface,
         ]);
       }
@@ -309,6 +315,7 @@ $(document).ready(function () {
     var poliza = $(this).attr("vigencia_poliza");
     var correo = $(this).attr("correo");
     var telefono = $(this).attr("telefono");
+    var estado   = $(this).attr("estado");
 
     $("#txt_Editespecialidad").val(especialidad);
     $("#txt_Editnombres").val(nombres);
@@ -318,6 +325,7 @@ $(document).ready(function () {
     $("#txt_Editpoliza").val(poliza);
     $("#txt_Editcorreo").val(correo);
     $("#txt_Edittelefono").val(telefono);
+    $("#txt_Editestado").val(estado);
     $("#btn_editarE").attr("documento", documento);
   });
 
@@ -331,6 +339,7 @@ $(document).ready(function () {
     var poliza = $("#txt_Editpoliza").val();
     var correo = $("#txt_Editcorreo").val();
     var telefono = $("#txt_Edittelefono").val();
+    var estado = $("#txt_Editestado").val();
     var documento = $(this).attr("documento");
 
     var objData = new FormData();
@@ -342,6 +351,7 @@ $(document).ready(function () {
     objData.append("jsEditpoliza", poliza);
     objData.append("jsEditcorreo", correo);
     objData.append("jsEditTelefono", telefono);
+    objData.append("jsEditestado", estado);
 
     $.ajax({
       url: "http://localhost/ospedale/control/especialistaControl.php",
