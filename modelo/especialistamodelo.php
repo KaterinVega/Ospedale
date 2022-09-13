@@ -98,8 +98,18 @@ class EspecialistaModelo
         
         if (move_uploaded_file($file, $route . "/" . $filename)){
             return "ok";
-        } else {
-            return "error";
         }
+
+        return "error";
+    }
+
+    public static function mdlDeleteFile($route) {
+        $handler = new Folder();
+        
+        if ($handler->delete($route)){
+            return "ok";
+        }
+
+        return "error";
     }
 }

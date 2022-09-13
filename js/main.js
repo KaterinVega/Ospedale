@@ -471,8 +471,8 @@ $(document).ready(function () {
         /*interface += '<button id="btn_editarEspe" type="button" title="Editar" documento="' + item.documento + '" nombre="' + item.nombre + '" documento="' + item.documento + '"  poliza="' + item.vigencia_poliza + '" correo="' + item.correo + '" telefono="' + item.telefono + '" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ventana-EditarUsuarios"><span class="glyphicon glyphicon-wrench"></span></button>';*/
 
          interface +=
-          '<button id="btn_eliminardocu" type="button" title="Eliminar" documento="' +
-          item.documento +
+          '<button id="btn_eliminardocu" type="button" title="Eliminar" data-route="' +
+          dni + "/" + item +
           '" type="button"><span class="glyphicon glyphicon-trash"></span></span></button>';
 
          interface += "</div>";
@@ -507,9 +507,10 @@ $(document).ready(function () {
       cancelButtonText: "cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
-        var dni = $(this).attr("data-dni");
+        var route = $(this).attr("data-route");
         var objData = new FormData();
-        objData.append("idEliminardocu", dni);
+        objData.append("eliminarDocumento", "ok");
+        objData.append("route", route);
 
         $.ajax({
           url: "http://localhost/ospedale/control/especialistaControl.php",
@@ -520,7 +521,9 @@ $(document).ready(function () {
           contentType: false,
           processData: false,
         }).done(function (respuesta) {
-          window.location = "../../views/especialistas/index.php";
+          if (respuesta == "ok"){
+            window.location.reload();
+          }
         })
       }
     });

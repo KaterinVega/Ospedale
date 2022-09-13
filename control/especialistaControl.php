@@ -49,6 +49,11 @@ class EspecialistaControl{
         $objRespuesta = EspecialistaModelo::mdlUploadFile($dni, $name, $file);
         echo json_encode($objRespuesta);
     }
+
+    public function ctrDeleteFile($route) {
+        $objRespuesta = EspecialistaModelo::mdlDeleteFile($route);
+        echo json_encode($objRespuesta);
+    }
 }
 
 
@@ -107,6 +112,12 @@ if (isset($_POST["cargarDocumentos"]) == "ok"){
     $dni = $_POST["dni"];
     $obj = new EspecialistaControl();
     $obj->ctrListFiles($dni);
+}
+
+if (isset($_POST["eliminarDocumento"]) == "ok"){
+    $route = $_POST["route"];
+    $obj = new EspecialistaControl();
+    $obj->ctrDeleteFile($route);
 }
 
 ?>
