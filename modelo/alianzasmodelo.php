@@ -76,4 +76,25 @@ class AlianzaModelo{
         }
         return $mensaje;
     }
+    public static function mdlListFilesA($dni){
+        $handler = new Folder();
+        $files = $handler->files($dni);
+        $response = [];
+
+        foreach ($files as $file) {
+            array_push($response, $file);
+        }
+
+        return $response;
+    }
+    public static function mdlUploadFileA($dni, $filename, $file){
+        $handler = new Folder();
+        $route = $handler->create($dni);
+        
+        if (move_uploaded_file($file, $route . "/" . $filename)){
+            return "ok";
+        } else {
+            return "error";
+        }
+    }
 }

@@ -43,7 +43,16 @@ class AlianzasControl{
         $objRespuesta = AlianzaModelo::mdlEliminarAli($this->nit);
         echo json_encode($objRespuesta);
     }
+    public function ctrListFilesA($dni){
+        $objRespuesta = AlianzaModelo::mdlListFilesA($dni);
+        echo json_encode($objRespuesta);
+    }
+    public function ctrUploadFileA($dni, $name, $file){
+        $objRespuesta = AlianzaModelo::mdlUploadFileA($dni, $name, $file);
+        echo json_encode($objRespuesta);
+    }
 }
+
 
 //insertar Alianzas
 if (isset($_POST["jsrazon"]) && isset($_POST["jsnit"]) && isset($_POST["jsrepresentante"]) && isset($_POST["jsobjecto"]) && isset($_POST["jsinicioCon"]) && isset($_POST["jsfinCon"])  && isset($_POST["jsprorroga"]) && isset($_POST["jscamara"]) &&  isset($_POST["jscorreo"]) && isset($_POST["jstelefono"]) && isset($_POST["jssupervisor"])) {
