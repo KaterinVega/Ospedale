@@ -301,7 +301,8 @@ a{
     background-color: none;
 }
 .dato{
-    width: 45%;
+    width: 40%;
+    height: auto;
     font-size: 18px;
     color: #6c6c6d;
     font-family: Georgia, 'Times New Roman', Times, serif;
