@@ -286,7 +286,8 @@ $(document).ready(function () {
 
         interface += "</div>";
 
-        dataSet.push([
+        dataSet.push
+        ([
           contadorEspe,
           item.especialidad,
           item.nombres,
@@ -688,6 +689,7 @@ $(document).ready(function () {
     var correo = $(this).attr("correo");
     var telefono = $(this).attr("telefono");
     var supervisor = $(this).attr("supervisor");
+    var estadoA = $(this).attr("estadoA");
 
     $("#txt_EditRazon").val(razon);
     $("#txt_Editnit").val(nit);
@@ -700,10 +702,12 @@ $(document).ready(function () {
     $("#txt_Editcorreo").val(correo);
     $("#txt_Edittelefono").val(telefono);
     $("#txt_Editsupervisor").val(supervisor);
+    $("#txt_EditestadoA").val(estadoA);
     $("#btn_EditarAL").attr("nit", nit);
   });
 
-  $("#btn_EditarAL").click(function () {
+  $("#btn_editarAdm").click(function () {
+    window.alert("hikaa")
     var razon = $("#txt_EditRazon").val();
     var nit = $("#txt_Editnit").val();
     var representante = $("#txt_Editrepresentante").val();
@@ -715,6 +719,7 @@ $(document).ready(function () {
     var correo = $("#txt_Editcorreo").val();
     var telefono = $("#txt_Edittelefono").val();
     var supervisor = $("#txt_Editsupervisor").val();
+    var estadoA = $("#txt_EditestadoA").val();
     var nit = $(this).attr("nit");
 
     var objData = new FormData();
@@ -729,6 +734,7 @@ $(document).ready(function () {
     objData.append("jsEditcorreo", correo);
     objData.append("jsEditTelefono", telefono);
     objData.append("jsEditsupervisor", supervisor);
+    objData.append("jsEditestadoA", estadoA);
 
     $.ajax({
       url: "http://localhost/ospedale/control/alianzasControl.php",
