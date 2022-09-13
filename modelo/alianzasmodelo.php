@@ -37,9 +37,9 @@ class AlianzaModelo{
         return $ListarAlianzas;
     }
 
-    public static function mdlEditarAli($razon,$nit,$representante,$objecto,$inicioConA,$finConA,$prorro,$camara,$correo,$telefono,$supervisor){
+    public static function mdlEditarAli($razon,$nit,$representante,$objecto,$inicioConA,$finConA,$prorro,$camara,$correo,$telefono,$supervisor,$estadoA){
 
-        $objRespuesta = conexion::conectar()->prepare("UPDATE alianzas SET razon_social= :razon, nit=:nit, representante=:representante, objecto=:objecto, inicioConA=:iniciocon,finConA=:fincon,prorroga=:prorroga,camara=:camara,correo=:correo, telefono=:telefono, supervisor=:supervisor WHERE nit=:nit");
+        $objRespuesta = conexion::conectar()->prepare("UPDATE alianzas SET razon_social= :razon, nit=:nit, representante=:representante, objecto=:objecto, inicioConA=:iniciocon,finConA=:fincon,prorroga=:prorroga,camara=:camara,correo=:correo, telefono=:telefono, supervisor=:supervisor estadoA=:estadoA WHERE nit=:nit");
 
         $objRespuesta->bindParam(":razon",$razon);
         $objRespuesta->bindParam(":nit",$nit);
@@ -52,6 +52,7 @@ class AlianzaModelo{
         $objRespuesta->bindParam(":correo",$correo);
         $objRespuesta->bindParam(":telefono",$telefono);
         $objRespuesta->bindParam(":supervisor",$supervisor);
+        $objRespuesta->bindParam(":estadoA",$estadoA);
 
         $mensaje = "";
         if ($objRespuesta->execute()){
@@ -62,5 +63,38 @@ class AlianzaModelo{
         $objRespuesta = null;
         
         return $mensaje;
+    }
+    public static function mdlEliminarAli($nit){
+        $mensaje="";
+        $objRespuesta = conexion::conectar()->prepare("DELETE FROM alianzas WHERE nit = :nit");
+        $objRespuesta->bindParam(":nit",$nit);
+
+        if($objRespuesta->execute()){
+            $mensaje = "ok";
+        }else{
+            $mensaje = "Error Al Eliminar los datos";
+        }
+        return $mensaje;
+    }
+    public static function mdlListFilesA($dni){
+        $handler = new Folder();
+        $files = $handler->files($dni);
+        $response = [];
+
+        foreach ($files as $file) {
+            array_push($response, $file);
+        }
+
+        return $response;
+    }
+    public static function mdlUploadFileA($dni, $filename, $file){
+        $handler = new Folder();
+        $route = $handler->create($dni);
+        
+        if (move_uploaded_file($file, $route . "/" . $filename)){
+            return "ok";
+        } else {
+            return "error";
+        }
     }
 }

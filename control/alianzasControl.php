@@ -16,6 +16,8 @@ class AlianzasControl{
     public $correo;
     public $telefono;
     public $supervisor;
+    public $estadoA;
+    
     
 
     public function ctrRegistrarAli()
@@ -31,11 +33,26 @@ class AlianzasControl{
 
     public function ctrEditarAli()
     {
-        $objRespuesta = AlianzaModelo::mdlEditarAli($this->razon, $this->nit,$this->representante,$this->objecto,$this->inicioConA,$this->finConA,$this->prorro,$this->camara,$this->correo,$this->telefono,$this->supervisor);
+        $objRespuesta = AlianzaModelo::mdlEditarAli($this->razon, $this->nit,$this->representante,$this->objecto,$this->inicioConA,$this->finConA,$this->prorro,$this->camara,$this->correo,$this->telefono,$this->supervisor,$this->estadoA);
 
         echo json_encode($objRespuesta);
     }
+
+    public function ctrEliminarAli()
+    {
+        $objRespuesta = AlianzaModelo::mdlEliminarAli($this->nit);
+        echo json_encode($objRespuesta);
+    }
+    public function ctrListFilesA($dni){
+        $objRespuesta = AlianzaModelo::mdlListFilesA($dni);
+        echo json_encode($objRespuesta);
+    }
+    public function ctrUploadFileA($dni, $name, $file){
+        $objRespuesta = AlianzaModelo::mdlUploadFileA($dni, $name, $file);
+        echo json_encode($objRespuesta);
+    }
 }
+
 
 //insertar Alianzas
 if (isset($_POST["jsrazon"]) && isset($_POST["jsnit"]) && isset($_POST["jsrepresentante"]) && isset($_POST["jsobjecto"]) && isset($_POST["jsinicioCon"]) && isset($_POST["jsfinCon"])  && isset($_POST["jsprorroga"]) && isset($_POST["jscamara"]) &&  isset($_POST["jscorreo"]) && isset($_POST["jstelefono"]) && isset($_POST["jssupervisor"])) {
@@ -60,7 +77,7 @@ if(isset($_POST["cargarDatos"]) == "ok"){
     $objListarAlianzas->ctrListarAli();
 }
 
-if (isset($_POST["jsEditrazon"]) && isset($_POST["jsEditNit"]) && isset($_POST["jsEditrepresentante"]) && isset($_POST["jsEditobjecto"]) && isset($_POST["jsEditinicioConA"]) && isset($_POST["jsEditfinCon"]) && isset($_POST["jsEditprorroga"]) && isset($_POST["jsEditcamara"]) && isset($_POST["jsEditcorreo"]) && isset($_POST["jsEditTelefono"]) && isset($_POST["jsEditsupervisor"])) {
+if (isset($_POST["jsEditrazon"]) && isset($_POST["jsEditNit"]) && isset($_POST["jsEditrepresentante"]) && isset($_POST["jsEditobjecto"]) && isset($_POST["jsEditinicioConA"]) && isset($_POST["jsEditfinCon"]) && isset($_POST["jsEditprorroga"]) && isset($_POST["jsEditcamara"]) && isset($_POST["jsEditcorreo"]) && isset($_POST["jsEditTelefono"]) && isset($_POST["jsEditsupervisor"]) && isset($_POST["jsEditestadoA"])) {
 
     $objEditarUsuario = new AlianzasControl();
     $objEditarUsuario->razon = $_POST["jsEditrazon"];
@@ -74,6 +91,14 @@ if (isset($_POST["jsEditrazon"]) && isset($_POST["jsEditNit"]) && isset($_POST["
     $objEditarUsuario->correo = $_POST["jsEditcorreo"];
     $objEditarUsuario->telefono = $_POST["jsEditTelefono"];
     $objEditarUsuario->supervisor = $_POST["jsEditsupervisor"];
+    $objEditarUsuario->estadoA = $_POST["jsEditestadoA"];
     $objEditarUsuario->ctrEditarAli();
 
+}
+
+//eliminar Ali
+if (isset($_POST["idEliminarAli"])) {
+    $objEliminarUsuario = new AlianzasControl ();
+    $objEliminarUsuario->documento = $_POST["idEliminarAli"];
+    $objEliminarUsuario->ctrEliminarAli();
 }

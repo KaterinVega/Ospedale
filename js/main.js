@@ -3,6 +3,7 @@ $(document).ready(function () {
   cargarUsuario();
   cargarAli();
   cargarArchi();
+  cargarArchiA();
 
   // funcion login
   $("#btn_login").click(function () {
@@ -285,7 +286,8 @@ $(document).ready(function () {
 
         interface += "</div>";
 
-        dataSet.push([
+        dataSet.push
+        ([
           contadorEspe,
           item.especialidad,
           item.nombres,
@@ -690,6 +692,7 @@ $(document).ready(function () {
     var correo = $(this).attr("correo");
     var telefono = $(this).attr("telefono");
     var supervisor = $(this).attr("supervisor");
+    var estadoA = $(this).attr("estadoA");
 
     $("#txt_EditRazon").val(razon);
     $("#txt_Editnit").val(nit);
@@ -702,10 +705,12 @@ $(document).ready(function () {
     $("#txt_Editcorreo").val(correo);
     $("#txt_Edittelefono").val(telefono);
     $("#txt_Editsupervisor").val(supervisor);
+    $("#txt_EditestadoA").val(estadoA);
     $("#btn_EditarAL").attr("nit", nit);
   });
 
-  $("#btn_EditarAL").click(function () {
+  $("#btn_editarAdm").click(function () {
+    window.alert("hikaa")
     var razon = $("#txt_EditRazon").val();
     var nit = $("#txt_Editnit").val();
     var representante = $("#txt_Editrepresentante").val();
@@ -717,6 +722,7 @@ $(document).ready(function () {
     var correo = $("#txt_Editcorreo").val();
     var telefono = $("#txt_Edittelefono").val();
     var supervisor = $("#txt_Editsupervisor").val();
+    var estadoA = $("#txt_EditestadoA").val();
     var nit = $(this).attr("nit");
 
     var objData = new FormData();
@@ -731,6 +737,7 @@ $(document).ready(function () {
     objData.append("jsEditcorreo", correo);
     objData.append("jsEditTelefono", telefono);
     objData.append("jsEditsupervisor", supervisor);
+    objData.append("jsEditestadoA", estadoA);
 
     $.ajax({
       url: "http://localhost/ospedale/control/alianzasControl.php",
@@ -795,4 +802,82 @@ $(document).ready(function () {
 
     window.open("../../documentAli.php?nit=" + nit, "_blank");
   });
+
+  $("#btn-subirArchivosA").click(function () {
+    var file = $("#fileUserAli").prop("files")[0];
+    var dni = $(this).attr("data-dni");
+
+    var objData = new FormData();
+
+    objData.append("subirArchivoA", "ok");
+    objData.append("fileUserAli", file);
+    objData.append("dni", dni);
+
+    $.ajax({
+      url: "http://localhost/ospedale/control/alianzasControl.php",
+      type: "post",
+      dataType: "json",
+      data: objData,
+      cache: false,
+      contentType: false,
+      processData: false
+    }).done(function (r) {
+      if (r == "ok") {
+        window.location.reload();
+      }
+    });
+  });
+
+    //funcion archivos documentos ali
+    function cargarArchiA() {
+      if (dni != null) {
+        var objData = new FormData();
+        objData.append("cargarDocumentos", "ok");
+        objData.append("dni", dni);
+        $.ajax({
+          url: "http://localhost/ospedale/control/alianzasControl.php",
+          type: "post",
+          dataType: "json",
+          data: objData,
+          cache: false,
+          contentType: false,
+          processData: false,
+        }).done(function (respuesta) {
+          var dataSet = [];
+          var contadorAl = 0;
+  
+          respuesta.forEach(tabladocuAli);
+  
+          function tabladocuAli(item, index) {
+            contadorAl += 1;
+  
+            var interface = "";
+  
+          interface += '<div class="btn-group">';
+  
+          /*interface += '<button id="btn_editarEspe" type="button" title="Editar" documento="' + item.documento + '" nombre="' + item.nombre + '" documento="' + item.documento + '"  poliza="' + item.vigencia_poliza + '" correo="' + item.correo + '" telefono="' + item.telefono + '" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ventana-EditarUsuarios"><span class="glyphicon glyphicon-wrench"></span></button>';*/
+  
+           interface +=
+            '<button id="btn_eliminardocu" type="button" title="Eliminar" documento="' +
+            item.documento +
+            '" type="button"><span class="glyphicon glyphicon-trash"></span></span></button>';
+  
+           interface += "</div>";
+            
+  
+            dataSet.push([
+              contadorAl,
+              item,
+              interface
+            ]);
+          }
+  
+          var tabla = $(".tabladocuAli").DataTable({
+            data: dataSet,
+            responsive: true,
+          });
+        });
+      }
+  
+    }
 });

@@ -126,6 +126,13 @@ $usuario = $_SESSION["usuario"];
                                                 <label for="txt_supervisor">Supervisor del contrato:</label>
                                                 <input type="text" class="form-control" id="txt_supervisor">
                                             </div>
+                                            <div class="form-group">
+                                                <label for="txt_estadoA">Estado:</label>
+                                                <select id="txt_estadoA" class="form-control">
+                                                    <option class="opciones" value="Activo">Activo</option>
+                                                    <option class="opciones" value="inactivo">Inactivo</option>
+                                                </select>
+                                            </div>
 
                                             <button id="btn_guardarAL" type="button" class="btn btn-primary"> Aceptar</button>
                                         </form>
@@ -184,6 +191,7 @@ $usuario = $_SESSION["usuario"];
                                                 <th>Inicio Contrato</th>
                                                 <th>Fin Contrato</th>
                                                 <th>Supervisor Contrato</th>
+                                                <th>Estado</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
@@ -268,6 +276,13 @@ $usuario = $_SESSION["usuario"];
                             <div class="form-group">
                                 <label for="txt_Editsupervisor">Supervisor del contrato:</label>
                                 <input type="text" class="form-control" id="txt_Editsupervisor">
+                            </div>
+                            <div class="form-group">
+                                <label for="txt_EditestadoA">Estado:</label>
+                                    <select id="txt_EditestadoA" class="form-control">
+                                    <option class="opciones" value="Activo">Activo</option>
+                                    <option class="opciones" value="Inactivo">Inactivo</option>
+                                    </select>
                             </div>
 
                             <button id="btn_EditarAL" type="button" class="btn btn-primary"> Aceptar</button>
