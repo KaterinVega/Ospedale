@@ -1,6 +1,7 @@
 <?php
 
 include_once "conexion.php";
+include_once "../libs/Folder.php";
 
 class AlianzaModelo{
     public static function mdlRegistrarAli($razon, $nit, $representante, $objecto, $inicioConA, $finConA,$prorro, $camara, $correo, $telefono, $supervisor)
