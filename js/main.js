@@ -312,9 +312,9 @@ $(document).ready(function () {
     var especialidad = $(this).attr("especialidad");
     var nombres = $(this).attr("nombres");
     var documento = $(this).attr("documento");
-    var inicioCon = $(this).attr("fecha_inicio");
-    var finCon = $(this).attr("fecha_fin");
-    var poliza = $(this).attr("vigencia_poliza");
+    var inicio = $(this).attr("iniciocontrato");
+    var fin = $(this).attr("fincontrato");
+    var poliza = $(this).attr("poliza");
     var correo = $(this).attr("correo");
     var telefono = $(this).attr("telefono");
     var estado   = $(this).attr("estado");
@@ -322,8 +322,8 @@ $(document).ready(function () {
     $("#txt_Editespecialidad").val(especialidad);
     $("#txt_Editnombres").val(nombres);
     $("#txt_Editdocumento").val(documento);
-    $("#txt_Editfechaini").val(inicioCon);
-    $("#txt_Editfechafin").val(finCon);
+    $("#txt_Editinicio").val(inicio);
+    $("#txt_Editfin").val(fin);
     $("#txt_Editpoliza").val(poliza);
     $("#txt_Editcorreo").val(correo);
     $("#txt_Edittelefono").val(telefono);
@@ -336,8 +336,8 @@ $(document).ready(function () {
     var especialidad = $("#txt_Editespecialidad").val();
     var nombres = $("#txt_Editnombres").val();
     var documento = $("#txt_Editdocumento").val();
-    var inicioCon = $("#txt_Editfechaini").val();
-    var finCon = $("#txt_Editfechafin").val();
+    var inicio = $("#txt_Editinicio").val();
+    var fin = $("#txt_Editfin").val();
     var poliza = $("#txt_Editpoliza").val();
     var correo = $("#txt_Editcorreo").val();
     var telefono = $("#txt_Edittelefono").val();
@@ -348,8 +348,8 @@ $(document).ready(function () {
     objData.append("jsEditEspecialidad", especialidad);
     objData.append("jsEditNombres", nombres);
     objData.append("jsEditDocumento", documento);
-    objData.append("jsEditinicio", inicioCon);
-    objData.append("jsEditfin", finCon);
+    objData.append("jsEditinicio", inicio);
+    objData.append("jsEditfin", fin);
     objData.append("jsEditpoliza", poliza);
     objData.append("jsEditcorreo", correo);
     objData.append("jsEditTelefono", telefono);
@@ -366,13 +366,13 @@ $(document).ready(function () {
     }).done(function (respuesta) {
       if (respuesta == "ok") {
         window.location = "../../views/especialistas/index.php";
-        /*Swal.fire({
+        Swal.fire({
         position: "top-end",
         icon: "success",
-        title: "El Usuario fue registrado correctamente",
+        title: "El Especialista fue Actualizado correctamente",
         showConfirmButton: false,
         timer: 1500,
-      });*/
+      });
       }
     });
   });

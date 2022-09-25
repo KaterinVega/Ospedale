@@ -8,8 +8,8 @@ class EspecialistaControl{
     public $especialidad;
     public $nombres;
     public $documento;
-    public $inicioCon;
-    public $finCon;
+    public $inicio;
+    public $fin;
     public $poliza;
     public $correo;
     public $telefono;
@@ -29,7 +29,7 @@ class EspecialistaControl{
 
     public function ctrEditarEspecialista()
     {
-        $objRespuesta = EspecialistaModelo::mdlEditarEspecialista($this->especialidad, $this->nombres,$this->documento,$this->inicioCon,$this->finCon,$this->poliza,$this->correo,$this->telefono,$this->estado);
+        $objRespuesta = EspecialistaModelo::mdlEditarEspecialista($this->especialidad, $this->nombres,$this->documento,$this->inicio,$this->fin,$this->poliza,$this->correo,$this->telefono,$this->estado);
 
         echo json_encode($objRespuesta);
     }
@@ -83,8 +83,8 @@ if (isset($_POST["jsEditEspecialidad"]) && isset($_POST["jsEditNombres"]) && iss
     $objEditarUsuario->especialidad = $_POST["jsEditEspecialidad"];
     $objEditarUsuario->nombres = $_POST["jsEditNombres"];
     $objEditarUsuario->documento = $_POST["jsEditDocumento"];
-    $objEditarUsuario->inicioCon = $_POST["jsEditinicio"];
-    $objEditarUsuario->finCon = $_POST["jsEditfin"];
+    $objEditarUsuario->inicio= $_POST["jsEditinicio"];
+    $objEditarUsuario->fin = $_POST["jsEditfin"];
     $objEditarUsuario->poliza = $_POST["jsEditpoliza"];
     $objEditarUsuario->correo = $_POST["jsEditcorreo"];
     $objEditarUsuario->telefono = $_POST["jsEditTelefono"];

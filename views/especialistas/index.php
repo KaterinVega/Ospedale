@@ -191,13 +191,13 @@ $usuario = $_SESSION["usuario"];
                             </div>
 
                             <div class="form-group">
-                                <label for="txt_Editfechaini">Fecha Inicio Contrato:</label>
-                                <input type="text" class="form-control" id="txt_Editfechaini">
+                                <label for="txt_Editinicio">Fecha Inicio Contrato:</label>
+                                <input type="text" class="form-control" id="txt_Editinicio">
                             </div>
 
                             <div class="form-group">
-                                <label for="txt_Editfechafin">Fecha Finalizacion Contrato:</label>
-                                <input type="text" class="form-control" id="txt_Editfechafin">
+                                <label for="txt_Editfin">Fecha Finalizacion Contrato:</label>
+                                <input type="text" class="form-control" id="txt_Editfin">
                             </div>
 
                             <div class="form-group">
