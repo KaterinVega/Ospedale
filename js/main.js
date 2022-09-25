@@ -710,7 +710,6 @@ $(document).ready(function () {
   });
 
   $("#btn_editarAdm").click(function () {
-    window.alert("hikaa")
     var razon = $("#txt_EditRazon").val();
     var nit = $("#txt_Editnit").val();
     var representante = $("#txt_Editrepresentante").val();
@@ -803,14 +802,14 @@ $(document).ready(function () {
     window.open("../../documentAli.php?nit=" + nit, "_blank");
   });
 
-  $("#btn-subirArchivosA").click(function () {
-    var file = $("#fileUserAli").prop("files")[0];
+  $("#btn-subirArchivos").click(function () {
+    var file = $("#fileUser").prop("files")[0];
     var dni = $(this).attr("data-dni");
 
     var objData = new FormData();
 
-    objData.append("subirArchivoA", "ok");
-    objData.append("fileUserAli", file);
+    objData.append("subirArchivo", "ok");
+    objData.append("fileUser", file);
     objData.append("dni", dni);
 
     $.ajax({
@@ -856,7 +855,8 @@ $(document).ready(function () {
           interface += '<div class="btn-group">';
   
           /*interface += '<button id="btn_editarEspe" type="button" title="Editar" documento="' + item.documento + '" nombre="' + item.nombre + '" documento="' + item.documento + '"  poliza="' + item.vigencia_poliza + '" correo="' + item.correo + '" telefono="' + item.telefono + '" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ventana-EditarUsuarios"><span class="glyphicon glyphicon-wrench"></span></button>';*/
-  
+          console.log(item);
+          interface += '<a href="http://localhost/ospedale/FileViewerA.php?fileName=' + item + '&nit=' + dni + '"><span class="glyphicon glyphicon-eye-open"></span></a>';
            interface +=
             '<button id="btn_eliminardocuA" type="button" title="Eliminar" documento="' +
             item.documento +
@@ -894,7 +894,7 @@ $(document).ready(function () {
       if (result.isConfirmed) {
         var route = $(this).attr("data-route");
         var objData = new FormData();
-        objData.append("eliminarDocumentoAli", "ok");
+        objData.append("eliminarDocumento", "ok");
         objData.append("route", route);
 
         $.ajax({

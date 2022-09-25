@@ -103,15 +103,15 @@ if (isset($_POST["jsEditrazon"]) && isset($_POST["jsEditNit"]) && isset($_POST["
 //eliminar Ali
 if (isset($_POST["idEliminarAli"])) {
     $objEliminarUsuario = new AlianzasControl ();
-    $objEliminarUsuario->documento = $_POST["idEliminarAli"];
+    $objEliminarUsuario->nit = $_POST["idEliminarAli"];
     $objEliminarUsuario->ctrEliminarAli();
 }
 // Subir documentos
-if (isset($_POST["subirArchivoA"]) == "ok"){
+if (isset($_POST["subirArchivo"]) == "ok"){
     $dni = $_POST["dni"];
-    $filename = $_FILES["fileUserAli"]["name"];
+    $filename = $_FILES["fileUser"]["name"];
     $obj = new AlianzasControl();
-    $obj->ctrUploadFileA($dni, $filename, $_FILES["fileUserAli"]["tmp_name"]);
+    $obj->ctrUploadFileA($dni, $filename, $_FILES["fileUser"]["tmp_name"]);
 }
 
 // Cargar documentos
@@ -121,7 +121,7 @@ if (isset($_POST["cargarDocumentos"]) == "ok"){
     $obj->ctrListFilesA($dni);
 }
 
-if (isset($_POST["eliminarDocumentoAli"]) == "ok"){
+if (isset($_POST["eliminarDocumento"]) == "ok"){
     $route = $_POST["route"];
     $obj = new AlianzasControl();
     $obj->ctrDeleteFileA($route);

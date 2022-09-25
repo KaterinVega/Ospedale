@@ -36,9 +36,7 @@ $usuario = $_SESSION["usuario"];
                     <li class="nav-item">
                         <a id="item_tab1" class="nav-link active" href="#tercerosA" data-toggle="tab">Terceros Administrativos</a>
                     </li>
-                    <li class="nav-item">
-                        <a id="item_tab2" class="nav-link active" href="#inactivos" data-toggle="tab">Inactivos</a>
-                    </li>
+                    
 
                 </ul>
 
@@ -174,36 +172,6 @@ $usuario = $_SESSION["usuario"];
                         </div>
                     </div>
 
-                    <div class="tab-pane" id="inactivos">
-                        <br>
-
-                        <h3>Inactivos</h3>
-
-                        <div class="row">
-                            <div class="col-md-8">
-                                <div class="container">
-                                    <table id="tablaInactivosA" class="table table-striped table-bordered dt-responsive tablaInactivosA" style="width:100%;">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Razon Social</th>
-                                                <th>Nit</th>
-                                                <th>Inicio Contrato</th>
-                                                <th>Fin Contrato</th>
-                                                <th>Supervisor Contrato</th>
-                                                <th>Estado</th>
-                                                <th>Acciones</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
                 </div>
 
 

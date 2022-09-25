@@ -67,11 +67,11 @@ $usuario = $objRespuesta->fetch();
 
         <div class="form-group">
           <label for="txt_imagen">Documentos:</label>
-          <input type="file" class="form-control" id="fileUserAli">
+          <input type="file" class="form-control" id="fileUser">
         </div>
 
 
-        <button type="button" id="btn-subirArchivosA" data-dni="<?php echo $nit; ?>" class="btn btnsubi">Subir Archivos</button>
+        <button type="button" id="btn-subirArchivos" data-dni="<?php echo $nit; ?>" class="btn btnsubi">Subir Archivos</button>
 
       </form>
     </div>
