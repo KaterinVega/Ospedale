@@ -99,7 +99,7 @@ class AlianzaModelo{
             return "error";
         }
     }
-    public static function mdlDeleteFileA($route) {
+    public static function mdlDeleteFile($route) {
         $handler = new Folder();
         
         if ($handler->delete($route)){

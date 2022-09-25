@@ -51,8 +51,8 @@ class AlianzasControl{
         $objRespuesta = AlianzaModelo::mdlUploadFileA($dni, $name, $file);
         echo json_encode($objRespuesta);
     }
-    public function ctrDeleteFileA($route) {
-        $objRespuesta = AlianzaModelo::mdlDeleteFileA($route);
+    public function ctrDeleteFile($route) {
+        $objRespuesta = AlianzaModelo::mdlDeleteFile($route);
         echo json_encode($objRespuesta);
     }
 }
@@ -82,7 +82,7 @@ if(isset($_POST["cargarDatos"]) == "ok"){
     $objListarAlianzas->ctrListarAli();
 }
 
-if (isset($_POST["jsEditrazon"]) && isset($_POST["jsEditNit"]) && isset($_POST["jsEditrepresentante"]) && isset($_POST["jsEditobjecto"]) && isset($_POST["jsEditinicioConA"]) && isset($_POST["jsEditfinCon"]) && isset($_POST["jsEditprorroga"]) && isset($_POST["jsEditcamara"]) && isset($_POST["jsEditcorreo"]) && isset($_POST["jsEditTelefono"]) && isset($_POST["jsEditsupervisor"]) && isset($_POST["jsEditestadoA"])) {
+if (isset($_POST["jsEditrazon"]) && isset($_POST["jsEditNit"]) && isset($_POST["jsEditrepresentante"]) && isset($_POST["jsEditobjecto"]) && isset($_POST["jsEditinicioConA"]) && isset($_POST["jsEditfinCon"]) && isset($_POST["jsEditprorroga"]) && isset($_POST["jsEditcamara"]) && isset($_POST["jsEditcorreo"]) && isset($_POST["jsEditTelefono"]) && isset($_POST["jsEditsupervisor"]) && isset($_POST["jsEditestado"])) {
 
     $objEditarUsuario = new AlianzasControl();
     $objEditarUsuario->razon = $_POST["jsEditrazon"];
@@ -96,7 +96,7 @@ if (isset($_POST["jsEditrazon"]) && isset($_POST["jsEditNit"]) && isset($_POST["
     $objEditarUsuario->correo = $_POST["jsEditcorreo"];
     $objEditarUsuario->telefono = $_POST["jsEditTelefono"];
     $objEditarUsuario->supervisor = $_POST["jsEditsupervisor"];
-    $objEditarUsuario->estadoA = $_POST["jsEditestadoA"];
+    $objEditarUsuario->estadoA = $_POST["jsEditestado"];
     $objEditarUsuario->ctrEditarAli();
 
 }
@@ -125,6 +125,6 @@ if (isset($_POST["cargarDocumentos"]) == "ok"){
 if (isset($_POST["eliminarDocumento"]) == "ok"){
     $route = $_POST["route"];
     $obj = new AlianzasControl();
-    $obj->ctrDeleteFileA($route);
+    $obj->ctrDeleteFile($route);
 }
 

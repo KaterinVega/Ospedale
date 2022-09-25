@@ -708,11 +708,11 @@ $(document).ready(function () {
     $("#txt_Editcorreo").val(correo);
     $("#txt_Edittelefono").val(telefono);
     $("#txt_Editsupervisor").val(supervisor);
-    $("#txt_EditestadoA").val(estadoA);
+    $("#txt_Editestado").val(estadoA);
     $("#btn_EditarAL").attr("nit", nit);
   });
 
-  $("#btn_editarAdm").click(function () {
+  $("#btn_EditarAL").click(function () {
     var razon = $("#txt_EditRazon").val();
     var nit = $("#txt_Editnit").val();
     var representante = $("#txt_Editrepresentante").val();
@@ -724,7 +724,7 @@ $(document).ready(function () {
     var correo = $("#txt_Editcorreo").val();
     var telefono = $("#txt_Edittelefono").val();
     var supervisor = $("#txt_Editsupervisor").val();
-    var estadoA = $("#txt_EditestadoA").val();
+    var estadoA = $("#txt_Editestado").val();
     var nit = $(this).attr("nit");
 
     var objData = new FormData();
