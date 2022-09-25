@@ -469,11 +469,10 @@ $(document).ready(function () {
           var interface = "";
 
         interface += '<div class="btn-group">';
-
         /*interface += '<button id="btn_editarEspe" type="button" title="Editar" documento="' + item.documento + '" nombre="' + item.nombre + '" documento="' + item.documento + '"  poliza="' + item.vigencia_poliza + '" correo="' + item.correo + '" telefono="' + item.telefono + '" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ventana-EditarUsuarios"><span class="glyphicon glyphicon-wrench"></span></button>';*/
           console.log(item);
-        interface += '<a href="http://localhost/ospedale/FileViewer.php?fileName=' + item + '&documento=' + dni + '">Abrir</a>';
-
+          interface += '<a href="http://localhost/ospedale/FileViewer.php?fileName=' + item + '&documento=' + dni + '"><span class="glyphicon glyphicon-eye-open"></span></a>';
+          
          interface +=
           '<button id="btn_eliminardocu" type="button" title="Eliminar" data-route="' +
           dni + "/" + item +
@@ -481,7 +480,6 @@ $(document).ready(function () {
 
          interface += "</div>";
           
-
           dataSet.push([
             contadorEspe,
             item,
