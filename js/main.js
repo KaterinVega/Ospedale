@@ -545,6 +545,7 @@ $(document).ready(function () {
     var correo = $("#txt_correo").val();
     var telefono = $("#txt_telefono").val();
     var supervisor = $("#txt_supervisor").val();
+    var estado = $("#txt_estadoA").val();
 
     var objData = new FormData();
     objData.append("jsrazon", razon);
@@ -558,6 +559,7 @@ $(document).ready(function () {
     objData.append("jscorreo", correo);
     objData.append("jstelefono", telefono);
     objData.append("jssupervisor", supervisor);
+    objData.append("jsestadoA", estado);
     $.ajax({
       url: "http://localhost/ospedale/control/alianzasControl.php",
       type: "post",
@@ -579,6 +581,7 @@ $(document).ready(function () {
         $("#txt_correo").val("");
         $("#txt_telefono").val("");
         $("#txt_supervisor").val("");
+        $("#txt_estadoA").val("");
         $("#ventana-alianzas").modal("toggle");
         Swal.fire({
           position: "top-end",

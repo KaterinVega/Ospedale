@@ -128,7 +128,7 @@ $usuario = $_SESSION["usuario"];
                                                 <label for="txt_estadoA">Estado:</label>
                                                 <select id="txt_estadoA" class="form-control">
                                                     <option class="opciones" value="Activo">Activo</option>
-                                                    <option class="opciones" value="inactivo">Inactivo</option>
+                                                    <option class="opciones" value="Inactivo">Inactivo</option>
                                                 </select>
                                             </div>
 

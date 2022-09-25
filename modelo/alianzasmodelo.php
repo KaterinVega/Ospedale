@@ -4,9 +4,9 @@ include_once "conexion.php";
 include_once "../libs/Folder.php";
 
 class AlianzaModelo{
-    public static function mdlRegistrarAli($razon, $nit, $representante, $objecto, $inicioConA, $finConA,$prorro, $camara, $correo, $telefono, $supervisor)
+    public static function mdlRegistrarAli($razon, $nit, $representante, $objecto, $inicioConA, $finConA,$prorro, $camara, $correo, $telefono, $supervisor, $estadoA)
     {
-        $objRespuesta = conexion::conectar()->prepare("INSERT INTO alianzas values(:razon,:nit,:representante,:objecto ,:inicioconA,:finconA, :prorroga, :camara,:correo,:telefono, :supervisor)");
+        $objRespuesta = conexion::conectar()->prepare("INSERT INTO alianzas values(:razon,:nit,:representante,:objecto ,:inicioconA,:finconA, :prorroga, :camara,:correo,:telefono, :supervisor, :estado)");
         $objRespuesta->bindParam(":razon", $razon);
         $objRespuesta->bindParam(":nit", $nit);
         $objRespuesta->bindParam(":representante", $representante);
@@ -18,6 +18,7 @@ class AlianzaModelo{
         $objRespuesta->bindParam(":correo", $correo);
         $objRespuesta->bindParam(":telefono", $telefono);
         $objRespuesta->bindParam(":supervisor", $supervisor);
+        $objRespuesta->bindParam(":estado", $estadoA);
 
         $mensaje = "";
         if ($objRespuesta->execute()) {

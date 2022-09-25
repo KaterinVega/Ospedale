@@ -22,7 +22,7 @@ class AlianzasControl{
 
     public function ctrRegistrarAli()
     {
-        $objRespuesta = AlianzaModelo:: mdlRegistrarAli($this->razon,$this->nit, $this->representante, $this->objecto, $this->inicioConA,$this->finConA,$this->prorro,$this->camara,$this->correo, $this->telefono , $this->supervisor);
+        $objRespuesta = AlianzaModelo:: mdlRegistrarAli($this->razon,$this->nit, $this->representante, $this->objecto, $this->inicioConA,$this->finConA,$this->prorro,$this->camara,$this->correo, $this->telefono , $this->supervisor, $this->estadoA);
         echo json_encode($objRespuesta);
     }
 
@@ -59,7 +59,7 @@ class AlianzasControl{
 
 
 //insertar Alianzas
-if (isset($_POST["jsrazon"]) && isset($_POST["jsnit"]) && isset($_POST["jsrepresentante"]) && isset($_POST["jsobjecto"]) && isset($_POST["jsinicioCon"]) && isset($_POST["jsfinCon"])  && isset($_POST["jsprorroga"]) && isset($_POST["jscamara"]) &&  isset($_POST["jscorreo"]) && isset($_POST["jstelefono"]) && isset($_POST["jssupervisor"])) {
+if (isset($_POST["jsrazon"]) && isset($_POST["jsnit"]) && isset($_POST["jsrepresentante"]) && isset($_POST["jsobjecto"]) && isset($_POST["jsinicioCon"]) && isset($_POST["jsfinCon"])  && isset($_POST["jsprorroga"]) && isset($_POST["jscamara"]) &&  isset($_POST["jscorreo"]) && isset($_POST["jstelefono"]) && isset($_POST["jssupervisor"]) && isset($_POST["jsestadoA"])) {
     $objUsuario = new AlianzasControl();
     $objUsuario->razon = $_POST["jsrazon"];
     $objUsuario->nit = $_POST["jsnit"];
@@ -72,6 +72,7 @@ if (isset($_POST["jsrazon"]) && isset($_POST["jsnit"]) && isset($_POST["jsrepres
     $objUsuario->correo = $_POST["jscorreo"];
     $objUsuario->telefono = $_POST["jstelefono"];
     $objUsuario->supervisor = $_POST["jssupervisor"];
+    $objUsuario->estadoA = $_POST["jsestadoA"];
     $objUsuario->ctrRegistrarAli();
 }
 
