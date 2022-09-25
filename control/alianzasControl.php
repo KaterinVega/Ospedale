@@ -51,6 +51,10 @@ class AlianzasControl{
         $objRespuesta = AlianzaModelo::mdlUploadFileA($dni, $name, $file);
         echo json_encode($objRespuesta);
     }
+    public function ctrDeleteFileA($route) {
+        $objRespuesta = AlianzaModelo::mdlDeleteFileA($route);
+        echo json_encode($objRespuesta);
+    }
 }
 
 
@@ -102,3 +106,24 @@ if (isset($_POST["idEliminarAli"])) {
     $objEliminarUsuario->documento = $_POST["idEliminarAli"];
     $objEliminarUsuario->ctrEliminarAli();
 }
+// Subir documentos
+if (isset($_POST["subirArchivoA"]) == "ok"){
+    $dni = $_POST["dni"];
+    $filename = $_FILES["fileUserAli"]["name"];
+    $obj = new AlianzasControl();
+    $obj->ctrUploadFileA($dni, $filename, $_FILES["fileUserAli"]["tmp_name"]);
+}
+
+// Cargar documentos
+if (isset($_POST["cargarDocumentos"]) == "ok"){
+    $dni = $_POST["dni"];
+    $obj = new AlianzasControl();
+    $obj->ctrListFilesA($dni);
+}
+
+if (isset($_POST["eliminarDocumentoAli"]) == "ok"){
+    $route = $_POST["route"];
+    $obj = new AlianzasControl();
+    $obj->ctrDeleteFileA($route);
+}
+

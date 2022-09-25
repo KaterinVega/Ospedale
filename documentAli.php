@@ -104,6 +104,7 @@ $usuario = $objRespuesta->fetch();
 
 
 <script>
+  const cargo = null;
   const dni = '<?php echo $nit; ?>';
 </script>
 

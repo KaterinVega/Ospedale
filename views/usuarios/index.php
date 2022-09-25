@@ -69,7 +69,7 @@ $usuario = $_SESSION["usuario"];
                                     <label for="txt_cargo">Rol:</label>
                                     <select id="txt_cargo" class="form-control">
                                         <option class="opciones" value="Administrador">Administrador</option>
-                                        <option class="opciones" value="visua">Visualizador</option>
+                                        <option class="opciones" value="Secundario">Secundario</option>
                                     </select>
                                 </div>
 

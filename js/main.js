@@ -831,8 +831,8 @@ $(document).ready(function () {
   });
 
     //funcion archivos documentos ali
-    function cargarArchiA() {
-      if (dni != null) {
+  function cargarArchiA() {
+    if (dni != null) {
         var objData = new FormData();
         objData.append("cargarDocumentos", "ok");
         objData.append("dni", dni);
@@ -860,7 +860,7 @@ $(document).ready(function () {
           /*interface += '<button id="btn_editarEspe" type="button" title="Editar" documento="' + item.documento + '" nombre="' + item.nombre + '" documento="' + item.documento + '"  poliza="' + item.vigencia_poliza + '" correo="' + item.correo + '" telefono="' + item.telefono + '" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ventana-EditarUsuarios"><span class="glyphicon glyphicon-wrench"></span></button>';*/
   
            interface +=
-            '<button id="btn_eliminardocu" type="button" title="Eliminar" documento="' +
+            '<button id="btn_eliminardocuA" type="button" title="Eliminar" documento="' +
             item.documento +
             '" type="button"><span class="glyphicon glyphicon-trash"></span></span></button>';
   
@@ -880,6 +880,41 @@ $(document).ready(function () {
           });
         });
       }
-  
-    }
+  }
+
+  $(".tabladocuAli").on("click", "#btn_eliminardocuA", function () {
+    Swal.fire({
+      title: "Esta usted seguro que quiere Eliminar el documento?",
+      text: "Recuerde que no se podra recuperar",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "si,Estoy seguro!",
+      cancelButtonText: "cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        var route = $(this).attr("data-route");
+        var objData = new FormData();
+        objData.append("eliminarDocumentoAli", "ok");
+        objData.append("route", route);
+
+        $.ajax({
+          url: "http://localhost/ospedale/control/alianzasControl.php",
+          type: "post",
+          dataType: "json",
+          data: objData,
+          cache: false,
+          contentType: false,
+          processData: false,
+        }).done(function (respuesta) {
+          if (respuesta == "ok"){
+            window.location.reload();
+          }
+        })
+      }
+    });
+  });
+   
 });
+

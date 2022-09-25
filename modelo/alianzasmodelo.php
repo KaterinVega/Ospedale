@@ -1,6 +1,7 @@
 <?php
 
 include_once "conexion.php";
+include_once "../libs/Folder.php";
 
 class AlianzaModelo{
     public static function mdlRegistrarAli($razon, $nit, $representante, $objecto, $inicioConA, $finConA,$prorro, $camara, $correo, $telefono, $supervisor)
@@ -96,5 +97,14 @@ class AlianzaModelo{
         } else {
             return "error";
         }
+    }
+    public static function mdlDeleteFileA($route) {
+        $handler = new Folder();
+        
+        if ($handler->delete($route)){
+            return "ok";
+        }
+
+        return "error";
     }
 }

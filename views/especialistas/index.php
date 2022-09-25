@@ -39,9 +39,6 @@ $usuario = $_SESSION["usuario"];
                     <li class="nav-item">
                         <a id="item_tab1" class="nav-link active" href="#terceros" data-toggle="tab">Terceros Asistenciales</a>
                     </li>
-                    <li class="nav-item">
-                        <a id="item_tab2" class="nav-link active" href="#inactivos" data-toggle="tab">Inactivos</a>
-                    </li>
                 </ul>
 
                 <div class="tab-content">
@@ -158,36 +155,7 @@ $usuario = $_SESSION["usuario"];
                         </div>
                     </div>
 
-                    <div class="tab-pane" id="inactivos">
-                        <br>
-
-                        <h3>Inactivos</h3>
-
-                        <div class="row">
-                            <div class="col-md-8">
-                                <div class="container">
-                                    <table id="tablaInactivos" class="table table-striped table-bordered dt-responsive tablaInactivos" style="width:100%;">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Especialidad</th>
-                                                <th>Nombres</th>
-                                                <th>documento</th>
-                                                <th>Email</th>
-                                                <th>telefono</th>
-                                                <th>Estado</th>
-                                                <th>Acciones</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                    
                 </div>
 
 
