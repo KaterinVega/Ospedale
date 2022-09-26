@@ -16,7 +16,7 @@ class AlianzasControl{
     public $correo;
     public $telefono;
     public $supervisor;
-    public $estadoA;
+    public $estado;
     
     
 
@@ -33,7 +33,7 @@ class AlianzasControl{
 
     public function ctrEditarAli()
     {
-        $objRespuesta = AlianzaModelo::mdlEditarAli($this->razon, $this->nit,$this->representante,$this->objecto,$this->inicioConA,$this->finConA,$this->prorro,$this->camara,$this->correo,$this->telefono,$this->supervisor,$this->estadoA);
+        $objRespuesta = AlianzaModelo::mdlEditarAli($this->razon, $this->nit,$this->representante,$this->objecto,$this->inicioConA,$this->finConA,$this->prorro,$this->camara,$this->correo,$this->telefono,$this->supervisor,$this->estado);
 
         echo json_encode($objRespuesta);
     }
@@ -96,7 +96,7 @@ if (isset($_POST["jsEditrazon"]) && isset($_POST["jsEditNit"]) && isset($_POST["
     $objEditarUsuario->correo = $_POST["jsEditcorreo"];
     $objEditarUsuario->telefono = $_POST["jsEditTelefono"];
     $objEditarUsuario->supervisor = $_POST["jsEditsupervisor"];
-    $objEditarUsuario->estadoA = $_POST["jsEditestado"];
+    $objEditarUsuario->estado = $_POST["jsEditestado"];
     $objEditarUsuario->ctrEditarAli();
 
 }

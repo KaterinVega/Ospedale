@@ -312,8 +312,8 @@ $(document).ready(function () {
     var especialidad = $(this).attr("especialidad");
     var nombres = $(this).attr("nombres");
     var documento = $(this).attr("documento");
-    var inicio = $(this).attr("iniciocontrato");
-    var fin = $(this).attr("fincontrato");
+    var inicio = $(this).attr("inicio");
+    var fin = $(this).attr("fin");
     var poliza = $(this).attr("poliza");
     var correo = $(this).attr("correo");
     var telefono = $(this).attr("telefono");
@@ -695,7 +695,7 @@ $(document).ready(function () {
     var correo = $(this).attr("correo");
     var telefono = $(this).attr("telefono");
     var supervisor = $(this).attr("supervisor");
-    var estadoA = $(this).attr("estadoA");
+    var estado = $(this).attr("estadoA");
 
     $("#txt_EditRazon").val(razon);
     $("#txt_Editnit").val(nit);
@@ -708,7 +708,7 @@ $(document).ready(function () {
     $("#txt_Editcorreo").val(correo);
     $("#txt_Edittelefono").val(telefono);
     $("#txt_Editsupervisor").val(supervisor);
-    $("#txt_Editestado").val(estadoA);
+    $("#txtEditestado").val(estado);
     $("#btn_EditarAL").attr("nit", nit);
   });
 
@@ -724,7 +724,7 @@ $(document).ready(function () {
     var correo = $("#txt_Editcorreo").val();
     var telefono = $("#txt_Edittelefono").val();
     var supervisor = $("#txt_Editsupervisor").val();
-    var estadoA = $("#txt_Editestado").val();
+    var estado = $("#txtEditestado").val();
     var nit = $(this).attr("nit");
 
     var objData = new FormData();
@@ -739,7 +739,7 @@ $(document).ready(function () {
     objData.append("jsEditcorreo", correo);
     objData.append("jsEditTelefono", telefono);
     objData.append("jsEditsupervisor", supervisor);
-    objData.append("jsEditestadoA", estadoA);
+    objData.append("jsEditestado", estado);
 
     $.ajax({
       url: "http://localhost/ospedale/control/alianzasControl.php",
@@ -752,13 +752,13 @@ $(document).ready(function () {
     }).done(function (respuesta) {
       if (respuesta == "ok") {
         window.location = "../../views/alianzas/index.php";
-        /*Swal.fire({
+        Swal.fire({
         position: "top-end",
         icon: "success",
-        title: "El Usuario fue registrado correctamente",
+        title: "El Registro fue Actualizado correctamente",
         showConfirmButton: false,
         timer: 1500,
-      });*/
+      });
       }
     });
   });

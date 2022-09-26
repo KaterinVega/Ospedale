@@ -81,10 +81,10 @@ $usuario = $objRespuesta->fetch();
   <div class="cont2">
     <div class="aliicon"><img class="ali" src="img/images-removebg-preview.ico" alt="" width="60px"></div>
     Fecha Inicio Contrato:
-    <div class="datos"><?php echo $usuario['iniciocontrato'] ?></div>
+    <div class="datos"><?php echo $usuario['inicio'] ?></div>
     <br>
     Fecha Fin Contrato:
-    <div class="datos"><?php echo $usuario['fincontrato'] ?></div>
+    <div class="datos"><?php echo $usuario['fin'] ?></div>
     <br>
     Vigencia Poliza:
     <div class="datos"><?php echo $usuario['poliza'] ?></div>

@@ -44,13 +44,13 @@ class EspecialistaModelo
 
     public static function mdlEditarEspecialista($especialidad,$nombres,$documento,$inicio,$fin,$poliza,$correo,$telefono,$estado){
 
-        $objRespuesta = conexion::conectar()->prepare("UPDATE especialistas SET especialidad= :especialidad, nombres=:nombres, documento=:documento, iniciocontrato=:iniciocon,fincontrato=:fincon,poliza=:poliza,correo=:correo, telefono=:telefono, estado=:estado WHERE documento=:documento");
+        $objRespuesta = conexion::conectar()->prepare("UPDATE especialistas SET especialidad= :especialidad, nombres=:nombres, documento=:documento, inicio=:inicio,fin=:fin,poliza=:poliza,correo=:correo, telefono=:telefono, estado=:estado WHERE documento=:documento");
 
         $objRespuesta->bindParam(":especialidad",$especialidad);
         $objRespuesta->bindParam(":nombres",$nombres);
         $objRespuesta->bindParam(":documento",$documento);
-        $objRespuesta->bindParam(":iniciocon",$inicio);
-        $objRespuesta->bindParam(":fincon",$fin);
+        $objRespuesta->bindParam(":inicio",$inicio);
+        $objRespuesta->bindParam(":fin",$fin);
         $objRespuesta->bindParam(":poliza",$poliza);
         $objRespuesta->bindParam(":correo",$correo);
         $objRespuesta->bindParam(":telefono",$telefono);

@@ -246,7 +246,7 @@ $usuario = $_SESSION["usuario"];
                                 <input type="text" class="form-control" id="txt_Editsupervisor">
                             </div>
                             <div class="form-group">
-                                <label for="txt_Editestado">Estado:</label>
+                                <label for="txtEditestado">Estado:</label>
                                     <select id="txt_Editestado" class="form-control">
                                     <option class="opciones" value="Activo">Activo</option>
                                     <option class="opciones" value="Inactivo">Inactivo</option>
